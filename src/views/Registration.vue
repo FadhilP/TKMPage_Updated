@@ -238,10 +238,6 @@ export default {
 		//Validasi token
 		await this.getToken();
 		console.log("getToken() status: " + this.isValid);
-	},
-	async mounted() {
-		//Cek kredensialnya valid atau engga
-		console.log("apakah valid ? " + this.isValid);
 		if (this.isValid == true) {
 			//Assign user_id
 			this.user_id = localStorage.getItem("identifier");
@@ -252,6 +248,10 @@ export default {
 		} else {
 			this.$router.push({ name: "403" });
 		}
+	},
+	async mounted() {
+		//Cek kredensialnya valid atau engga
+		console.log("apakah valid ? " + this.isValid);
 	},
 	methods: {
 		async getToken() {
