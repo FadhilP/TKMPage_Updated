@@ -54,12 +54,6 @@
 				:class="{ 'mt-16': !authFail }"
 			>
 				<div class="shadow-lg rounded">
-					<!-- <v-button
-						v-google-signin-button="clientId"
-						class="py-3 lg:py-4"
-						:class="loadingClasses"
-						msg="Lanjutkan"
-					/> -->
 					<v-button
 						@click.native="toggleModal()"
 						class="py-3 lg:py-4"
