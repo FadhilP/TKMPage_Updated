@@ -40,7 +40,7 @@
 							value=""
 						/>
 					</div> -->
-					<div class="block mt-4">
+					<!-- <div class="block mt-4">
 						<p class="text-gray-600 font-semibold text-sm">Jenis Kelamin</p>
 						<div class="mt-2">
 							<label
@@ -72,8 +72,8 @@
 								<label for="wanita" class="ml-2 text-sm">Wanita</label>
 							</label>
 						</div>
-					</div>
-					<div class="block mt-4">
+					</div> -->
+					<!-- <div class="block mt-4">
 						<p class="text-gray-600 font-semibold text-sm">Nomor Telepon</p>
 						<input
 							v-model.lazy="person.phone"
@@ -81,7 +81,7 @@
 							placeholder="08123456XXX"
 							value=""
 						/>
-					</div>
+					</div> -->
 					<div class="block mt-4">
 						<p class="text-gray-600 font-semibold text-sm">Jabatan</p>
 						<input
@@ -234,22 +234,19 @@ export default {
 			registrationAPI: process.env.VUE_APP_REGISTRATION_API,
 			person: {
 				name: "",
-				gender: "",
-				nik: "",
-				phone: "",
 				jabatan: "",
 				divisi: "",
 			},
 			key: "",
-			state: {
-				province: "",
-				regency: "",
-				district: "",
-				address: "",
-			},
-			provinces: [],
-			regencies: [],
-			districts: [],
+			// state: {
+			// 	province: "",
+			// 	regency: "",
+			// 	district: "",
+			// 	address: "",
+			// },
+			// provinces: [],
+			// regencies: [],
+			// districts: [],
 			output: [],
 			clientData: [],
 		};
@@ -264,9 +261,9 @@ export default {
 			//Assign user_id
 			this.user_id = localStorage.getItem("identifier");
 			//Get key untuk API
-			await this.getKey();
+			// await this.getKey();
 			//Get Provinsi
-			await this.initState();
+			// await this.initState();
 		} else {
 			this.$router.push({ name: "403" });
 		}
@@ -282,76 +279,78 @@ export default {
 				.then(() => (null, (this.isValid = true)))
 				.catch((error) => console.log(error.response));
 		},
-		async getKey() {
-			await axios
-				.get("https://x.rajaapi.com/poe")
-				.then((response) => (this.key = response.data.token));
-		},
+		// async getKey() {
+		// 	await axios
+		// 		.get("https://x.rajaapi.com/poe")
+		// 		.then((response) => (this.key = response.data.token));
+		// },
 
-		async initState() {
-			const suffixUrl = "/m/wilayah/provinsi";
-			const url = this.baseUrl + this.key + suffixUrl;
+		// async initState() {
+		// 	const suffixUrl = "/m/wilayah/provinsi";
+		// 	const url = this.baseUrl + this.key + suffixUrl;
 
-			await axios
-				.get(url)
-				.then((response) => (this.provinces = response.data))
-				.catch((error) => console.error(error));
-		},
+		// 	await axios
+		// 		.get(url)
+		// 		.then((response) => (this.provinces = response.data))
+		// 		.catch((error) => console.error(error));
+		// },
 
-		province() {
-			this.state.regency = "";
-			this.state.district = "";
+		// province() {
+		// 	this.state.regency = "";
+		// 	this.state.district = "";
 
-			// set params
-			const suffixUrl = "/m/wilayah/kabupaten";
-			const url = this.baseUrl + this.key + suffixUrl;
-			const params = {
-				//nyesuain API Call dari rajaapi.com
-				idpropinsi: this.state.province.id,
-			};
+		// 	// set params
+		// 	const suffixUrl = "/m/wilayah/kabupaten";
+		// 	const url = this.baseUrl + this.key + suffixUrl;
+		// 	const params = {
+		// 		//nyesuain API Call dari rajaapi.com
+		// 		idpropinsi: this.state.province.id,
+		// 	};
 
-			// url /wilayah/kabupaten?idpropinsi=xxx
-			axios
-				.get(url, { params })
-				.then((response) => {
-					this.regencies = response.data;
-				})
-				.catch((error) => console.error(error));
-		},
+		// 	// url /wilayah/kabupaten?idpropinsi=xxx
+		// 	axios
+		// 		.get(url, { params })
+		// 		.then((response) => {
+		// 			this.regencies = response.data;
+		// 		})
+		// 		.catch((error) => console.error(error));
+		// },
 
-		regency() {
-			this.state.district = "";
+		// regency() {
+		// 	this.state.district = "";
 
-			const suffixUrl = "/m/wilayah/kecamatan";
-			const url = this.baseUrl + this.key + suffixUrl;
-			// set params
-			const params = {
-				idkabupaten: this.state.regency.id,
-			};
+		// 	const suffixUrl = "/m/wilayah/kecamatan";
+		// 	const url = this.baseUrl + this.key + suffixUrl;
+		// 	// set params
+		// 	const params = {
+		// 		idkabupaten: this.state.regency.id,
+		// 	};
 
-			axios
-				.get(url, { params })
-				.then((response) => {
-					this.districts = response.data;
-				})
-				.catch((error) => console.error(error));
-		},
+		// 	axios
+		// 		.get(url, { params })
+		// 		.then((response) => {
+		// 			this.districts = response.data;
+		// 		})
+		// 		.catch((error) => console.error(error));
+		// },
 
 		submit: function() {
-			const date = document.querySelector("input[id=date]").value;
+			// const date = document.querySelector("input[id=date]").value;
 
 			axios
 				.post(this.registrationAPI, {
 					user_id: localStorage.getItem("identifier"),
-					provinsi: this.state.province.name,
-					kabupaten: this.state.regency.name,
-					kecamatan: this.state.district.name,
-					alamat: this.state.address,
+					// provinsi: this.state.province.name,
+					// kabupaten: this.state.regency.name,
+					// kecamatan: this.state.district.name,
+					// alamat: this.state.address,
 					name: this.person.name,
-					nik: this.person.nik,
-					phone: this.person.phone,
-					gender: this.person.gender,
-					birthdate: date,
+					divisi: this.person.divisi,
+					jabatan: this.person.jabatan,
+					// nik: this.person.nik,
+					// phone: this.person.phone,
+					// gender: this.person.gender,
+					// birthdate: date,
 				})
 				.then(
 					(response) => (
