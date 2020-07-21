@@ -149,6 +149,7 @@ export default {
 	data() {
 		return {
 			user_id: "",
+			user_name: "",
 			authFail: false,
 			isLoading: false,
 			isValidated: "",
@@ -204,14 +205,15 @@ export default {
 					avatar: this.response.picture,
 					email: this.response.email,
 				})
-				.then(
-					(response) => (
-						(this.output = response.data),
-						(this.user_id = response.data.user_id),
-						(this.isValidated = true),
-						(this.userStatus = response.data.registered)
-					)
-				)
+				.then((response) => {
+					console.log(response);
+					const userData = JSON.parse(response.config.data);
+					this.user_name = userData.name;
+					this.output = response.data;
+					this.user_id = response.data.user_id;
+					this.isValidated = true;
+					this.userStatus = response.data.registered;
+				})
 				.catch(
 					(error) => (
 						console.log(error),
@@ -239,6 +241,7 @@ export default {
 				// let parsed = JSON.stringify(this.output.token);
 				localStorage.setItem("token", this.output.token);
 				localStorage.setItem("identifier", this.user_id);
+				localStorage.setItem("username", this.user_name);
 				console.log(this.output.token);
 			}
 		},
