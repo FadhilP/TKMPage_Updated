@@ -436,10 +436,10 @@ export default {
 						console.log("SUBMIT SUCCESS RESPONDED:"),
 						console.log(response.data),
 						(this.output = response.data),
-						(this.user_id = response.data.user_id),
-						this.$router.push({
-							name: "result",
-						})
+						(this.user_id = response.data.user_id)
+						// this.$router.push({
+						// 	name: "result",
+						// })
 					)
 				)
 				.catch(
@@ -447,6 +447,11 @@ export default {
 						console.log(error.response), (this.output = error.response)
 					)
 				);
+
+			// FORCE TO RESULT PAGE WHATEVER IT TAKES, JUST FOR TRIAL
+			this.$router.push({
+				name: "result",
+			});
 		},
 
 		similarity(list) {

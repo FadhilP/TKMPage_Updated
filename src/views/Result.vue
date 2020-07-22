@@ -172,110 +172,192 @@
 					</div>
 				</div>
 				<div class="w-full md:w-8/12 mx-auto md:ml-0">
+					<p class="mt-8">
+						Kondisi mental setiap individu bisa sangat berbeda satu sama lain.
+						Hal ini karena kita memiliki kehidupan dan lingkungan yang berbeda.
+						<br />Mari kita mengenal tentang depresi, kecemasan, dan stres
+						secara umum agar kita dapat menjaga kondisi kesehatan mental.
+					</p>
+
 					<tabs>
 						<tab name="Depresi" :selected="true">
 							<p class="my-1">
-								Terima kasih karena kamu telah memilih untuk mencari tahu
-								kondisi kesehatan mentalmu. Mengikuti tes kesehatan mental sama
-								sekali bukanlah hal yang tabu.
-							</p>
-							<p class="my-1">
-								Berdasarkan jawaban yang kamu berikan, jika skormu kurang dari
-								10, maka kamu bisa terus merawat dan lebih perhatian kepada
-								hal-hal yang mungkin membuatmu tidak nyaman secara berkala.
+								DEPRESI merupakan gangguan perasaan (afek) yang ditandai dengan
+								perasaan kehilangan kegembiraan/gairah hidup yang disertai
+								dengan gejala-gejala lain, seperti gangguan tidur dan gangguan
+								selera makan. (Lumongga Lubis, 2009).
 							</p>
 							<p class="mt-4">
-								Jika skormu adalah 10 atau lebih, maka kamu mungkin merasakan
-								satu atau beberapa kondisi di bawah ini:
+								Depresi biasanya terjadi saat stres yang dialami oleh seseorang
+								tidak kunjung reda. Depresi yang dialami biasanya berkorelasi
+								dengan kejadian traumatis yang baru saja terjadi atau menimpa
+								seseorang, misalnya kematian seseorang yang sangat dicintai atau
+								kehilangan pekerjaan yang sangat disukai. (Lumongga Lubis,
+								2009).
+							</p>
+							<p class="mt-4">
+								Berdasarkan jawaban yang Anda berikan, jika pengkategorian hasil
+								tes Anda <strong>normal, ringan atau sedang,</strong> maka Anda
+								sebaiknya melakukan perawatan diri dan menjaga perhatian kepada
+								hal-hal yang mungkin menimbulkan perasaan depresi secara
+								berkala.<br />Anda bisa melakukan kegiatan self-care seperti
+								<strong>meditasi</strong>
+								sebagai langkah pencegahan dari perasaan stres/cemas yang dapat
+								memicu depresi.
+							</p>
+							<p class="mt-4">
+								Jika pengkategorian hasil tes Anda
+								<strong>sedang, parah atau sangat parah,</strong>
+								mungkin Anda merasakan satu atau beberapa kondisi di bawah ini:
 							</p>
 							<ul
 								class="w-10/12 list-disc list-outside ml-6 my-4 text-gray-800 text-md"
 							>
-								<li class="my-2">Merendahkan diri sendiri</li>
 								<li class="my-2">
-									Kehilangan semangat atas hal-hal yang disukai
-								</li>
-								<li class="my-2">Galau, gundah, sedih berkepanjangan</li>
-								<li class="my-2">
-									Yakin bahwa hidupmu sudah tidak memiliki makna lagi
-								</li>
-								<li class="my-2">Pesimis terhadap masa depan</li>
-								<li class="my-2">
-									Kesulitan menikmati hal-hal yang biasanya menyenangkan atau
-									memuaskan
+									Kehilangan ketertarikan dan tidak mendapatkan lagi kesenangan
+									dari aktivitas yang disukai
 								</li>
 								<li class="my-2">
-									Kesulitan untuk berpartisipasi maupun terlibat dalam hal-hal
-									yang dulu diinginkan
+									Berat badan menurun (tanpa melakukan program diet) atau naik
+									secara drastis
 								</li>
-								<li class="my-2">Lamban</li>
-								<li class="my-2">Kurangnya inisiatif bertindak</li>
+								<li class="my-2">
+									Mengalami peningkatan atau penurunan nafsu makan
+								</li>
+								<li class="my-2">
+									Insomnia (kesulitan tidur) atau hipersomnia (terus-menerus
+									ingin tidur)
+								</li>
+								<li class="my-2">
+									Terus merasa lelah atau tidak berenergi
+								</li>
+								<li class="my-2">
+									Perasaan tidak berharga atau bersalah yang berlebihan
+								</li>
+								<li class="my-2">
+									dsb.
+								</li>
 							</ul>
+							<p class="mt-4">
+								<strong>
+									Untuk memastikan kondisi kesehatan mental Anda lebih lanjut
+									dapat dikonsultasikan dengan psikolog profesional. Segera
+									berkonsultasi dengan psikolog untuk mendapatkan diagnosa resmi
+									dan bantuan profesional yang terpercaya.</strong
+								>
+							</p>
 						</tab>
 						<tab name="Kecemasan">
 							<p class="my-1">
-								Terima kasih karena kamu telah memilih untuk mencari tahu
-								kondisi kesehatan mentalmu. Mengikuti tes kesehatan mental sama
-								sekali bukanlah hal yang tabu.
-							</p>
-							<p class="my-1">
-								Berdasarkan jawaban yang kamu berikan, jika skormu kurang dari
-								8, maka kamu bisa terus merawat dan lebih perhatian kepada
-								hal-hal yang mungkin membuatmu tidak nyaman secara berkala.
+								Kecemasan adalah tanggapan dari sebuah ancaman, nyata ataupun
+								khayal. (Lumongga Lubis, 2009).
 							</p>
 							<p class="mt-4">
-								Jika skormu adalah 8 atau lebih, maka kamu mungkin merasakan
-								satu atau beberapa kondisi di bawah ini:
+								Individu mengalami kecemasan karena adanya ketidakpastian di
+								masa mendatang. Misalnya, seseorang yang menghadapi masalah
+								penting dan belum mendapat penyelesaian yang pasti. Kecemasan
+								juga bisa berkembang menjadi suatu gangguan jika menimbulkan
+								ketakutan yang hebat dan menetap pada individu tersebut.
+								(Lumongga Lubis, 2009).
+							</p>
+							<p class="mt-4">
+								Berdasarkan jawaban yang Anda berikan, jika pengkategorian hasil
+								tes Anda <strong>normal, ringan atau sedang,</strong> maka Anda
+								sebaiknya melakukan perawatan diri dan menjaga perhatian kepada
+								hal-hal yang mungkin menimbulkan perasaan depresi secara
+								berkala.<br />Anda bisa melakukan kegiatan self-care seperti
+								<strong>meditasi</strong>
+								sebagai langkah pencegahan dari perasaan stres/cemas yang dapat
+								memicu depresi.
+							</p>
+							<p class="mt-4">
+								Jika pengkategorian hasil tes Anda
+								<strong>sedang, parah atau sangat parah,</strong>
+								mungkin Anda merasakan satu atau beberapa kondisi di bawah ini:
 							</p>
 							<ul
 								class="w-10/12 list-disc list-outside ml-6 my-4 text-gray-800 text-md"
 							>
 								<li class="my-2">
-									Mudah cemas dan yakin akan mengalami hal buruk
+									Sulit mengendalikan kekhawatiran
 								</li>
-								<li class="my-2">Mudah gugup</li>
-								<li class="my-2">Tremor/tubuh sering menggigil ketakutan</li>
-								<li class="my-2">Mulut kering</li>
-								<li class="my-2">Kesulitan bernafas</li>
-								<li class="my-2">Jantung sering berdebar</li>
-								<li class="my-2">Tangan sering berkeringat</li>
-								<li class="my-2">Khawatir akan tindakan yang akan dilakukan</li>
-								<li class="my-2">Ketakutan akan kehilangan kontrol tubuh</li>
+								<li class="my-2">Merasa gelisah atau tegang</li>
+								<li class="my-2">Menjadi mudah lelah</li>
+								<li class="my-2">
+									Kesulitan berkonsentrasi atau pikiran menjadi kosong
+								</li>
+								<li class="my-2">
+									Mengalami gangguan tidur (sulit tidur atau tertidur, kurang
+									tidur)
+								</li>
+								<li class="my-2">dsb.</li>
 							</ul>
+							<p class="mt-4">
+								<strong>
+									Untuk memastikan kondisi kesehatan mental Anda lebih lanjut
+									dapat dikonsultasikan dengan psikolog profesional. Segera
+									berkonsultasi dengan psikolog untuk mendapatkan diagnosa resmi
+									dan bantuan profesional yang terpercaya.</strong
+								>
+							</p>
 						</tab>
 						<tab name="Stres">
 							<p class="my-1">
-								Terima kasih karena kamu telah memilih untuk mencari tahu
-								kondisi kesehatan mentalmu. Mengikuti tes kesehatan mental sama
-								sekali bukanlah hal yang tabu.
-							</p>
-							<p class="my-1">
-								Berdasarkan jawaban yang kamu berikan, jika skormu kurang dari
-								15, maka kamu bisa terus merawat dan lebih perhatian kepada
-								hal-hal yang mungkin membuatmu tidak nyaman secara berkala.
+								Stres merupakan bentuk interaksi antara individu dengan
+								lingkungannya, yang dinilai sebagai sesuatu yang membebani atau
+								melampaui kemampuan yang dimilikinya, serta mengancam
+								kesejahteraannya. Stres merupakan fenomena individual dan
+								menunjukkan respons individu terhadap tuntutan lingkungan.
+								(Lazarus, 1984).
 							</p>
 							<p class="mt-4">
-								Jika skormu adalah 15 atau lebih, maka kamu mungkin merasakan
-								satu atau beberapa kondisi di bawah ini:
+								Secara terus-menerus individu akan menilai tuntutan dan hambatan
+								yang terdapat dalam lingkungan, serta menilai kemampuan dirinya
+								untuk mengatasi tuntutan tersebut. Apabila individu merasakan
+								ketidakseimbangan antara tuntutan dengan kemampuan yang
+								dimilikinya, maka stres akan muncul. Tuntutan yang secara umum
+								dapat memunculkan stres dapat diklasifikasikan dalam beberapa
+								bentuk, yaitu frustasi, konflik, tekanan, dan ancaman (Lumongga
+								Lubis, 2009).
+							</p>
+							<p class="mt-4">
+								Berdasarkan jawaban yang Anda berikan, jika pengkategorian hasil
+								tes Anda <strong>normal, ringan atau sedang,</strong> maka Anda
+								sebaiknya melakukan perawatan diri dan menjaga perhatian kepada
+								hal-hal yang mungkin menimbulkan perasaan depresi secara
+								berkala.<br />Anda bisa melakukan kegiatan self-care seperti
+								<strong>meditasi</strong>
+								sebagai langkah pencegahan dari perasaan stres/cemas yang dapat
+								memicu depresi.
+							</p>
+							<p class="mt-4">
+								Jika pengkategorian hasil tes Anda
+								<strong>sedang, parah atau sangat parah,</strong>
+								mungkin Anda merasakan satu atau beberapa kondisi di bawah ini:
 							</p>
 							<ul
 								class="w-10/12 list-disc list-outside ml-6 my-4 text-gray-800 text-md"
 							>
-								<li class="my-2">Tidak dapat tenang</li>
-								<li class="my-2">Tegang setiap saat</li>
-								<li class="my-2">Kesulitan bersantai</li>
-								<li class="my-2">Tidak ingin disentuh</li>
-								<li class="my-2">Mudah marah</li>
-								<li class="my-2">Mudah tersinggung</li>
-								<li class="my-2">Mudah terkejut</li>
-								<li class="my-2">Mudah cemas</li>
-								<li class="my-2">Membenci interupsi atau perubahan rencana</li>
-								<li class="my-2">Tidak dapat mentoleransi keterlambatan</li>
+								<li class="my-2">Berkurangnya konsentrasi atau fokus</li>
+								<li class="my-2">Merasa kesepian</li>
+								<li class="my-2">Nyeri dada, detak jantung yang cepat</li>
+								<li class="my-2">Gangguan pencernaan, sakit perut</li>
 								<li class="my-2">
-									Kerap melakukan hal kecil untuk tetap tenang (menggigit jari,
-									mengusap tangan)
+									Terus merasa gugup, gusar, dan/atau gelisah
 								</li>
+								<li class="my-2">
+									Kehilangan nafsu makan atau terlalu banyak makan
+								</li>
+								<li class="my-2">dsb.</li>
 							</ul>
+							<p class="mt-4">
+								<strong>
+									Untuk memastikan kondisi kesehatan mental Anda lebih lanjut
+									dapat dikonsultasikan dengan psikolog profesional. Segera
+									berkonsultasi dengan psikolog untuk mendapatkan diagnosa resmi
+									dan bantuan profesional yang terpercaya.</strong
+								>
+							</p>
 						</tab>
 
 						<p class="mt-8 font-semibold text-sm text-gray-700">Disclaimer:</p>
