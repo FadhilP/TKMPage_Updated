@@ -14,7 +14,7 @@
 				</p>
 				<p class="text-center text-sm text-gray-600 mx-8">
 					Mohon untuk mengisi data diri Anda terlebih dahulu, agar kami dapat
-					memberi bantuan dengan lebih cepat dan tepat
+					memberikan bantuan dan informasi layanan secara optimal
 				</p>
 			</div>
 			<div class="w-11/12 border-t border-gray-300 mx-auto"></div>
@@ -82,113 +82,71 @@
 							value=""
 						/>
 					</div> -->
+
+					<!-- JABATAN INPUT -->
 					<div class="block mt-4">
 						<p class="text-gray-600 font-semibold text-sm">Jabatan</p>
+						<select
+							class="form-select mt-1 block w-full text-sm capitalize focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
+							:class="inputStyle(jabatan)"
+							v-model="person.jabatan"
+							placeholder="No"
+						>
+							<option value="" disabled selected>Pilih Jabatan</option>
+							<option
+								v-for="(data, index) in jabatan"
+								:value="data"
+								:key="`jabatan${index}`"
+								>{{ data.toLowerCase() }}</option
+							>
+						</select>
+					</div>
+
+					<div v-if="person.jabatan === 'Lainnya'" class="block mt-4">
+						<p class="text-gray-600 font-semibold text-sm">
+							Masukkan Jabatan Anda
+						</p>
 						<input
-							v-model.lazy="person.jabatan"
+							v-model.lazy="person.jabatanLainnya"
 							class="form-input mt-2 block w-full text-sm focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
 							placeholder="Jabatan di perusahaan"
 							value=""
 						/>
 					</div>
+					<!-- JABATAN INPUT END -->
+
+					<!-- UNIT KERJA INPUT -->
 					<div class="block mt-4">
-						<p class="text-gray-600 font-semibold text-sm">Divisi</p>
+						<p class="text-gray-600 font-semibold text-sm">Unit Kerja</p>
+						<select
+							class="form-select mt-1 block w-full text-sm capitalize focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
+							:class="inputStyle(unitKerja)"
+							v-model="person.unitKerja"
+							placeholder="No"
+						>
+							<option value="" disabled selected>Pilih unit kerja</option>
+							<option
+								v-for="(data, index) in unitKerja"
+								:value="data"
+								:key="`unitKerja${index}`"
+								>{{ data.toLowerCase() }}</option
+							>
+						</select>
+					</div>
+
+					<div v-if="person.unitKerja === 'Lainnya'" class="block mt-4">
+						<p class="text-gray-600 font-semibold text-sm">
+							Masukkan Unit Kerja Anda
+						</p>
 						<input
-							v-model.lazy="person.divisi"
+							v-model.lazy="person.unitKerjaLainnya"
 							class="form-input mt-2 block w-full text-sm focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
-							placeholder="Divisi di perusahaan"
+							placeholder="Unit kerja di perusahaan"
 							value=""
 						/>
 					</div>
-					<!-- <div class="block mt-4">
-						<p class="text-gray-600 font-semibold text-sm">Tanggal Lahir</p>
-						<div class="mt-2">
-							<v-date-picker
-								v-model.number="date"
-								locale="id-ID"
-								class="appearance-none"
-								:popover="{ placement: 'bottom', visibility: 'click' }"
-							>
-								<input
-									id="date"
-									name="datepicker"
-									class="focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
-									placeholder="Ex: 29/04/1999"
-									slot-scope="{ inputProps, inputEvents }"
-									:class="[
-										`appearance-none text-sm border rounded w-full py-2 px-3`,
-									]"
-									v-bind="inputProps"
-									v-on="inputEvents"
-								/>
-							</v-date-picker>
-						</div>
-					</div> -->
-					<!-- <div class="block mt-4">
-						<p class="text-gray-600 font-semibold text-sm">Provinsi</p>
-						<select
-							class="form-select mt-1 block w-full text-sm capitalize focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
-							:class="inputStyle(state.province)"
-							@change="province"
-							v-model="state.province"
-							placeholder="No"
-						>
-							<option value="" disabled selected>Pilih Provinsi</option>
-							<option
-								v-for="province in provinces.data"
-								:value="{ id: province.id, name: province.name }"
-								:key="province.id"
-								>{{ province.name.toLowerCase() }}</option
-							>
-						</select>
-					</div>
-					<div
-						class="block mt-4"
-						:class="[state.province != '' ? '' : 'hidden']"
-					>
-						<p class="text-gray-600 font-semibold text-sm">Kota/Kabupaten</p>
-						<select
-							class="form-select mt-1 block w-full text-sm capitalize focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
-							:class="inputStyle(state.regency)"
-							@change="regency"
-							v-model="state.regency"
-						>
-							<option value="" disabled selected>Pilih Kota/Kabupaten</option>
-							<option
-								v-for="regency in regencies.data"
-								:value="{ id: regency.id, name: regency.name }"
-								:key="regency.id"
-								>{{ regency.name.toLowerCase() }}</option
-							>
-						</select>
-					</div>
-					<div
-						class="block mt-4"
-						:class="[state.regency != '' ? '' : 'hidden']"
-					>
-						<p class="text-gray-600 font-semibold text-sm">Kecamatan</p>
-						<select
-							class="form-select mt-1 block w-full text-sm text-gray-500 capitalize focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
-							:class="inputStyle(state.district)"
-							v-model="state.district"
-						>
-							<option value="" disabled selected>Pilih Kecamatan</option>
-							<option
-								v-for="district in districts.data"
-								:value="{ id: district.id, name: district.name }"
-								:key="district.id"
-								>{{ district.name.toLowerCase() }}</option
-							>
-						</select>
-					</div> -->
-					<!-- <div class="block mt-4">
-						<p class="text-gray-600 font-semibold text-sm">Alamat</p>
-						<input
-							v-model="state.address"
-							class="form-input mt-2 block w-full text-sm focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
-							placeholder="Masukkan alamat anda"
-						/>
-					</div> -->
+					<!-- JABATAN INPUT END -->
+
 					<div class="block mt-8">
 						<v-button
 							type="submit"
@@ -226,137 +184,78 @@ export default {
 	},
 	data: function() {
 		return {
-			date: "",
 			username: "",
-			isValid: false,
-			baseUrl: "https://x.rajaapi.com/MeP7c5ne",
 			checkTokenAPI: process.env.VUE_APP_CHECK_TOKEN_API,
 			registrationAPI: process.env.VUE_APP_REGISTRATION_API,
+			jabatan: [
+				"Staff / Junior level",
+				"Supervisor / Junior level",
+				"Manager",
+				"General Manager",
+				"Direktur",
+				"Lainnya",
+			],
+			unitKerja: [
+				"Produksi",
+				"Pemasaran",
+				"Keuangan",
+				"Pengadaan",
+				"Teknologi Informasi (IT)",
+				"Lainnya",
+			],
+			kodePerusahaan: null,
 			person: {
 				name: "",
 				jabatan: "",
-				divisi: "",
+				unitKerja: "",
+				jabatanLainnya: null,
+				unitKerjaLainnya: null,
 			},
 			key: "",
-			// state: {
-			// 	province: "",
-			// 	regency: "",
-			// 	district: "",
-			// 	address: "",
-			// },
-			// provinces: [],
-			// regencies: [],
-			// districts: [],
-			output: [],
-			clientData: [],
 		};
 	},
 	/* eslint-disable no-console */
 	async created() {},
 	async mounted() {
-		//Validasi token
-		await this.getToken();
-		//Cek kredensialnya valid atau engga
-		if (this.isValid == true) {
-			//Assign user_id
-			this.user_id = localStorage.getItem("identifier");
-			//Get key untuk API
-			// await this.getKey();
-			//Get Provinsi
-			// await this.initState();
-		} else {
-			this.$router.push({ name: "403" });
-		}
+		//Assign user_id
+		this.username = localStorage.getItem("username");
+		this.person.name = this.username;
+		this.user_id = localStorage.getItem("identifier");
+		this.kodePerusahaan = localStorage.getItem("kodePerusahaan");
 	},
 	methods: {
-		async getToken() {
-			this.username = localStorage.getItem("username");
-			this.person.name = this.username;
-			await axios
-				.post(this.checkTokenAPI, {
-					token: localStorage.getItem("token"),
-				})
-				.then(() => (null, (this.isValid = true)))
-				.catch((error) => console.log(error.response));
-		},
-		// async getKey() {
-		// 	await axios
-		// 		.get("https://x.rajaapi.com/poe")
-		// 		.then((response) => (this.key = response.data.token));
-		// },
-
-		// async initState() {
-		// 	const suffixUrl = "/m/wilayah/provinsi";
-		// 	const url = this.baseUrl + this.key + suffixUrl;
-
-		// 	await axios
-		// 		.get(url)
-		// 		.then((response) => (this.provinces = response.data))
-		// 		.catch((error) => console.error(error));
-		// },
-
-		// province() {
-		// 	this.state.regency = "";
-		// 	this.state.district = "";
-
-		// 	// set params
-		// 	const suffixUrl = "/m/wilayah/kabupaten";
-		// 	const url = this.baseUrl + this.key + suffixUrl;
-		// 	const params = {
-		// 		//nyesuain API Call dari rajaapi.com
-		// 		idpropinsi: this.state.province.id,
-		// 	};
-
-		// 	// url /wilayah/kabupaten?idpropinsi=xxx
-		// 	axios
-		// 		.get(url, { params })
-		// 		.then((response) => {
-		// 			this.regencies = response.data;
-		// 		})
-		// 		.catch((error) => console.error(error));
-		// },
-
-		// regency() {
-		// 	this.state.district = "";
-
-		// 	const suffixUrl = "/m/wilayah/kecamatan";
-		// 	const url = this.baseUrl + this.key + suffixUrl;
-		// 	// set params
-		// 	const params = {
-		// 		idkabupaten: this.state.regency.id,
-		// 	};
-
-		// 	axios
-		// 		.get(url, { params })
-		// 		.then((response) => {
-		// 			this.districts = response.data;
-		// 		})
-		// 		.catch((error) => console.error(error));
-		// },
-
+		/* eslint-disable no-console */
 		submit: function() {
-			// const date = document.querySelector("input[id=date]").value;
+			// Jabatan Handler
+			let jabatanValue = null;
+			if (this.person.jabatan === "Lainnya") {
+				jabatanValue = this.person.jabatanLainnya;
+			} else jabatanValue = this.person.jabatan;
+
+			// Unit Kerja Handler
+			let unitKerjaValue = null;
+			if (this.person.unitKerja === "Lainnya") {
+				unitKerjaValue = this.person.unitKerjaLainnya;
+			} else unitKerjaValue = this.person.unitKerja;
 
 			axios
-				.post(this.registrationAPI, {
-					user_id: localStorage.getItem("identifier"),
-					// provinsi: this.state.province.name,
-					// kabupaten: this.state.regency.name,
-					// kecamatan: this.state.district.name,
-					// alamat: this.state.address,
-					name: this.person.name,
-					divisi: this.person.divisi,
-					jabatan: this.person.jabatan,
-					// nik: this.person.nik,
-					// phone: this.person.phone,
-					// gender: this.person.gender,
-					// birthdate: date,
-				})
+				.post(
+					this.registrationAPI,
+					{
+						companyCode: this.kodePerusahaan,
+						division: unitKerjaValue,
+						position: jabatanValue,
+					},
+					{
+						headers: {
+							Authorization: `Bearer ${localStorage.getItem("token")}`,
+						},
+					}
+				)
 				.then(
 					(response) => (
-						// console.log(response.data),
+						console.log(response.data),
 						(this.output = response.data),
-						(this.user_id = response.data.user_id),
 						this.$router.push({ name: "intro" })
 					)
 				)
