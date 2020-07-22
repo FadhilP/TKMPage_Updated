@@ -97,7 +97,7 @@
 								v-for="(data, index) in jabatan"
 								:value="data"
 								:key="`jabatan${index}`"
-								>{{ data.toLowerCase() }}</option
+								>{{ data }}</option
 							>
 						</select>
 					</div>
@@ -129,7 +129,7 @@
 								v-for="(data, index) in unitKerja"
 								:value="data"
 								:key="`unitKerja${index}`"
-								>{{ data.toLowerCase() }}</option
+								>{{ data }}</option
 							>
 						</select>
 					</div>
