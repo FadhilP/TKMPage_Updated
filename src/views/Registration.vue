@@ -255,9 +255,12 @@ export default {
 				.then(
 					(response) => (
 						(this.output = response.data), this.$router.push({ name: "intro" })
-					)
-				)
-				.catch((error) => (this.output = error.response));
+					),
+					(error) => {
+						console.log(error.response.data);
+						this.$router.push({ name: "home" });
+					}
+				);
 		},
 
 		inputStyle: function(targetInput) {

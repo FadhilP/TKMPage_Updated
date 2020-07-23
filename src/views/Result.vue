@@ -172,13 +172,6 @@
 					</div>
 				</div>
 				<div class="w-full md:w-8/12 mx-auto md:ml-0">
-					<p class="mt-8">
-						Kondisi mental setiap individu bisa sangat berbeda satu sama lain.
-						Hal ini karena kita memiliki kehidupan dan lingkungan yang berbeda.
-						<br />Mari kita mengenal tentang depresi, kecemasan, dan stres
-						secara umum agar kita dapat menjaga kondisi kesehatan mental.
-					</p>
-
 					<tabs>
 						<tab name="Depresi" :selected="true">
 							<p class="my-1">
@@ -359,16 +352,6 @@
 								>
 							</p>
 						</tab>
-
-						<p class="mt-8 font-semibold text-sm text-gray-700">Disclaimer:</p>
-						<p class="text-gray-700 text-xs">
-							Tes ini hanya menunjukkan kemungkinan kondisi kesehatan mental
-							sehari-hari kamu. Tes ini <b>bukan</b> merupakan diagnosa resmi.
-							Kondisi kesehatan mental <b>harus dikonsultasikan</b> dengan
-							psikolog profesional. Segera berkonsultasi dengan psikolog di
-							puskesmas atau rumah sakit terdekat untuk mendapatkan diagnosa
-							resmi dan bantuan profesional yang terpercaya.
-						</p>
 					</tabs>
 				</div>
 			</div>
@@ -640,7 +623,7 @@ export default {
 	},
 	async mounted() {
 		this.user_id = localStorage.getItem("identifier");
-		// Ambil data
+		// Check token
 		await this.getData();
 	},
 	methods: {
@@ -685,6 +668,8 @@ export default {
 			);
 		},
 
+		async checkTokenData() {},
+
 		/* eslint-disable no-console */
 		async getData() {
 			//Tiap API yang pake middleware auth harus nyertain token di header
@@ -694,53 +679,55 @@ export default {
 				},
 			};
 
-			await axios
-				.get(this.getResultAPI, config)
-				.then(
-					(response) => (
-						(this.output = response.data.data),
-						(this.level = [
-							this.output.depression_level,
-							this.output.anxiety_level,
-							this.output.stress_level,
-						]),
-						(this.series = [
-							{
-								data: [
-									this.output.depression_score,
-									this.output.anxiety_score,
-									this.output.stress_score,
-								],
-							},
-						]),
-						(this.chartOptions = {
-							chart: {
-								id: "vuechart-example",
-							},
-							xaxis: {
-								categories: ["Depresi", "Kecemasan", "Stres"],
-							},
-							yaxis: {
-								max: 42,
-								tickAmount: 4,
-							},
-							tooltip: {
-								enabled: false,
-							},
-							plotOptions: {
-								bar: {
-									distributed: true,
-								},
-							},
-							colors: [
-								this.getColor(this.output.depression_level),
-								this.getColor(this.output.anxiety_level),
-								this.getColor(this.output.stress_level),
+			await axios.get(this.getResultAPI, config).then(
+				(response) => (
+					(this.output = response.data.data),
+					(this.level = [
+						this.output.depression_level,
+						this.output.anxiety_level,
+						this.output.stress_level,
+					]),
+					(this.series = [
+						{
+							data: [
+								this.output.depression_score,
+								this.output.anxiety_score,
+								this.output.stress_score,
 							],
-						})
-					)
-				)
-				.catch((error) => (this.output = error.response));
+						},
+					]),
+					(this.chartOptions = {
+						chart: {
+							id: "vuechart-example",
+						},
+						xaxis: {
+							categories: ["Depresi", "Kecemasan", "Stres"],
+						},
+						yaxis: {
+							max: 42,
+							tickAmount: 4,
+						},
+						tooltip: {
+							enabled: false,
+						},
+						plotOptions: {
+							bar: {
+								distributed: true,
+							},
+						},
+						colors: [
+							this.getColor(this.output.depression_level),
+							this.getColor(this.output.anxiety_level),
+							this.getColor(this.output.stress_level),
+						],
+					})
+				),
+				(error) => {
+					const res = error;
+					console.log(res.data);
+					this.$router.push({ name: "home" });
+				}
+			);
 		},
 	},
 	computed: {

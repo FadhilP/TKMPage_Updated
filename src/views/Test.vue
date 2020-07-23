@@ -362,12 +362,16 @@ export default {
 					Authorization: `Bearer ${localStorage.getItem("token")}`,
 				},
 			})
-			.then((response) => {
-				this.dataSoal = response.data.data;
-			})
-			.catch((err) => console.log(err.data));
-
-		//Validasi token
+			.then(
+				(response) => {
+					this.dataSoal = response.data.data;
+				},
+				(error) => {
+					const res = error;
+					console.log(res);
+					this.$router.push({ name: "home" });
+				}
+			);
 	},
 	/* eslint-enable no-console */
 	methods: {
