@@ -254,9 +254,7 @@ export default {
 				)
 				.then(
 					(response) => (
-						console.log(response.data),
-						(this.output = response.data),
-						this.$router.push({ name: "intro" })
+						(this.output = response.data), this.$router.push({ name: "intro" })
 					)
 				)
 				.catch((error) => (this.output = error.response));

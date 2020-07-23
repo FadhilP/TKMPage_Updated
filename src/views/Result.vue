@@ -640,24 +640,11 @@ export default {
 	},
 	async mounted() {
 		this.user_id = localStorage.getItem("identifier");
-
-		//Validasi token
-		await axios
-			.post(this.checkTokenAPI, {
-				token: localStorage.getItem("token"),
-			})
-			.then(
-				(response) => ((this.isValid = true), (this.response = response.data))
-			)
-			.catch((error) => (this.response = error.response));
-
+		// Ambil data
+		await this.getData();
 		//Cek kredensialnya valid atau engga
 		if (this.isValid == true) {
-			//Get data untuk ditampilkan di grafik
-			await this.getData();
 		} else {
-			//kalo kredensial ditolak, kirim ke view 403
-			// this.$router.push({ name: '403' })
 		}
 	},
 	methods: {
@@ -701,6 +688,8 @@ export default {
 				}
 			);
 		},
+
+		/* eslint-disable no-console */
 		async getData() {
 			//Tiap API yang pake middleware auth harus nyertain token di header
 			const config = {
@@ -710,10 +699,10 @@ export default {
 			};
 
 			await axios
-				.get(this.getResultAPI + this.user_id, config)
+				.get(this.getResultAPI, config)
 				.then(
 					(response) => (
-						(this.output = response.data),
+						(this.output = response.data.data),
 						(this.level = [
 							this.output.depression_level,
 							this.output.anxiety_level,

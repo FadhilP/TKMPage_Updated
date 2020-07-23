@@ -341,8 +341,10 @@ export default {
 			validasi: [],
 			output: [],
 			errors: "",
+			dataSoal: [],
 			checkTokenAPI: process.env.VUE_APP_CHECK_TOKEN_API,
 			submitAnswerAPI: process.env.VUE_APP_SUBMIT_ANSWER_API,
+			getQuestionsAPI: process.env.VUE_APP_GET_QUESTIONS_API,
 		};
 	},
 	components: {
@@ -354,15 +356,25 @@ export default {
 	},
 	/* eslint-disable no-console */
 	async mounted() {
-		//Validasi token
+		await axios
+			.get(this.getQuestionsAPI, {
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem("token")}`,
+				},
+			})
+			.then((response) => {
+				this.dataSoal = response.data.data;
+			})
+			.catch((err) => console.log(err.data));
 
+		//Validasi token
 		//Cek kredensialnya valid atau engga
 		if (this.isValid == true) {
 			return (this.user_id = localStorage.getItem("identifier"));
 		} else {
-			this.$router.push({
-				name: "403",
-			});
+			// this.$router.push({
+			// 	name: "403",
+			// });
 		}
 	},
 	/* eslint-enable no-console */
@@ -399,8 +411,9 @@ export default {
 				var integerAnswer = parseInt(getAnswer, 10);
 
 				this.soal.push({
-					id: i,
+					id: this.dataSoal[i - 1].id,
 					answer: integerAnswer,
+					type: this.dataSoal[i - 1].type,
 				});
 
 				this.validasi.push(integerAnswer);
@@ -433,13 +446,11 @@ export default {
 				)
 				.then(
 					(response) => (
-						console.log("SUBMIT SUCCESS RESPONDED:"),
-						console.log(response.data),
 						(this.output = response.data),
-						(this.user_id = response.data.user_id)
-						// this.$router.push({
-						// 	name: "result",
-						// })
+						(this.user_id = response.data.user_id),
+						this.$router.push({
+							name: "result",
+						})
 					)
 				)
 				.catch(
@@ -447,11 +458,6 @@ export default {
 						console.log(error.response), (this.output = error.response)
 					)
 				);
-
-			// FORCE TO RESULT PAGE WHATEVER IT TAKES, JUST FOR TRIAL
-			this.$router.push({
-				name: "result",
-			});
 		},
 
 		similarity(list) {
