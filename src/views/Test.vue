@@ -368,14 +368,6 @@ export default {
 			.catch((err) => console.log(err.data));
 
 		//Validasi token
-		//Cek kredensialnya valid atau engga
-		if (this.isValid == true) {
-			return (this.user_id = localStorage.getItem("identifier"));
-		} else {
-			// this.$router.push({
-			// 	name: "403",
-			// });
-		}
 	},
 	/* eslint-enable no-console */
 	methods: {
@@ -447,7 +439,6 @@ export default {
 				.then(
 					(response) => (
 						(this.output = response.data),
-						(this.user_id = response.data.user_id),
 						this.$router.push({
 							name: "result",
 						})

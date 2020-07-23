@@ -642,10 +642,6 @@ export default {
 		this.user_id = localStorage.getItem("identifier");
 		// Ambil data
 		await this.getData();
-		//Cek kredensialnya valid atau engga
-		if (this.isValid == true) {
-		} else {
-		}
 	},
 	methods: {
 		getColor(level) {
