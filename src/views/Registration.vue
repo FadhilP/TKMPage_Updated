@@ -217,7 +217,7 @@ export default {
 	/* eslint-disable no-console */
 	async created() {},
 	async mounted() {
-		//Assign user_id
+		this.submit();
 		this.username = localStorage.getItem("username");
 		this.person.name = this.username;
 		this.user_id = localStorage.getItem("identifier");
@@ -257,8 +257,9 @@ export default {
 						(this.output = response.data), this.$router.push({ name: "intro" })
 					),
 					(error) => {
-						console.log(error.response.data);
-						this.$router.push({ name: "home" });
+						console.log(error.response.data.error.name);
+						if (error.response.data.error.name === "InvalidJwtToken")
+							this.$router.push({ name: "home" });
 					}
 				);
 		},
