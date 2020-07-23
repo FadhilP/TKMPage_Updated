@@ -172,6 +172,9 @@ export default {
 			showLoginWithGoogle: false,
 		};
 	},
+	async mounted() {
+		localStorage.removeItem("token");
+	},
 	methods: {
 		toggleLoading: function() {
 			this.isLoading = !this.isLoading;
