@@ -355,35 +355,9 @@
 					</tabs>
 				</div>
 			</div>
-			<div
-				class="rounded-lg bg-cyan-400 bg-cover bg-bottom bg-no-repeat"
-				:style="{ backgroundImage: `url(${background.biru})` }"
-			>
-				<div class="flex flex-col w-8/12 mx-auto py-16">
-					<p class="text-white text-center text-xl outline">
-						Apakah Anda membutuhkan bantuan psikologis profesional?
-					</p>
-					<p class="text-white text-center text-xl">
-						Dapatkan bantuan dari Tenaga Psikolog terdekat sekarang
-					</p>
-					<div class="flex flex-row w-full lg:w-6/12 mx-auto mt-8">
-						<a
-							href="https://ehealth.surabaya.go.id/pendaftaran/"
-							target="_blank"
-							class="flex flex-none mx-auto"
-						>
-							<v-button
-								class="py-4 px-5 mx-1 rounded-lg"
-								msg="Dapatkan Bantuan"
-							></v-button>
-						</a>
-					</div>
-				</div>
-				<!-- <img class="relative w-full top-0" src="../assets/bg-illustration.png" alt="Footer illustration"> -->
-			</div>
 		</div>
-		<div class="flex flex-col items-center">
-			<div class="flex flex-col pb-24 md:flex-row w-11/12 md:w-8/12">
+		<div class="flex flex-col items-center mt-12 bg-riliv-soft">
+			<div class="flex flex-col pb-24 pt-24 md:flex-row w-11/12 md:w-8/12">
 				<div class="overflow-hidden">
 					<img
 						class="min-w-0 object-contain h-auto mb-8 lg:m-0"
@@ -393,174 +367,22 @@
 				<div
 					class="flex flex-col text-center md:text-left text-gray-800 my-auto md:ml-16"
 				>
-					<p class="text-4xl font-semibold">Ikuti tes lagi</p>
-					<p class="text-xl leading-relaxed mt-2">
-						Anda dapat melakukan Tes Kesehatan Mental lagi setelah 10 hari
-						terhitung dari Anda melakukan tes kesehatan mental sebelumnya
+					<p class="text-4xl font-semibold">
+						Terima kasih telah mencari tahu kondisi kesehatan mental Anda
+					</p>
+					<p class="text-xl leading-relaxed mt-2" style="max-width: 660px;">
+						Tes ini merupakan langkah awal yang tepat dalam memahami kondisi
+						kesehatan mental Anda saat ini. Anda dapat menggunakan layanan Riliv
+						untuk berkonsultasi dengan psikolog profesional dan nikmati akses
+						beragam konten meditasi yang membantu Anda lebih mindful setiap
+						hari.
 					</p>
 					<div class="w-5/12 md:w-4/12 mx-auto md:mx-0 mt-4">
 						<v-button
 							class="py-3 text-xs"
-							msg="Ikuti tes lagi"
-							@click.native="toggleModal(0)"
+							msg="Coba Aplikasi Sekarang"
+							@click.native="cobaAplikasi()"
 						></v-button>
-						<modal v-show="isModalVisible[0]" @close="toggleModal(0)">
-							<div slot="header" class="mx-auto text-center mt-12">
-								<p class="font-bold text-gray-800">
-									Mohon Maaf, tunggu 10 hari lagi
-								</p>
-							</div>
-							<div slot="body" class="w-11/12 text-lg mx-auto mb-10">
-								<p class="text-gray-700">
-									Anda belum dapat melakukan Tes Kesehatan Mental lagi. Anda
-									harus menunggu selama 10 hari setelah melakukan tes terakhir.
-								</p>
-							</div>
-						</modal>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div
-			class="flex flex-col bg-cover"
-			:style="{ backgroundImage: `url(${background.orange})` }"
-		>
-			<div class="flex flex-row my-8 mx-4">
-				<div
-					class="flex flex-col w-8/12 sm:w-5/12 lg:w-4/12 justify-center mx-auto"
-				>
-					<p class="text-xl md:text-4xl font-bold text-white">
-						Apakah Anda merasa tes ini bermanfaat?
-					</p>
-					<p class="md:text-lg mt-1 leading-relaxed text-white">
-						Ajak teman Anda untuk mengetahui lebih dalam tentang kondisi
-						mentalnya!
-					</p>
-					<div class="w-6/12 md:w-4/12 mt-6">
-						<v-button
-							class="py-3"
-							msg="Ajak Teman"
-							variant="alternative"
-							@click.native="toggleModal(1)"
-						></v-button>
-						<modal v-show="isModalVisible[1]" @close="toggleModal(1)">
-							<div slot="header" class="mx-auto text-center mt-12">
-								<p class="font-bold text-gray-800">
-									Bagikan alat tes ini
-								</p>
-							</div>
-							<div slot="body" class="text-lg mx-auto mb-10">
-								<social-sharing
-									url="https://sehatmental.riliv.co"
-									title="Hai, gimana kondisimu saat ini? Untuk membantumu lebih mengenali kondisi mentalmu, yuk coba Tes Kesehatan Mental ini sekarang!"
-									description="Hai, gimana kondisimu saat ini? Untuk membantumu lebih mengenali kondisi mentalmu, yuk coba Tes Kesehatan Mental ini sekarang!"
-									quote="Hai, gimana kondisimu saat ini? Untuk membantumu lebih mengenali kondisi mentalmu, yuk coba Tes Kesehatan Mental ini sekarang!"
-									inline-template
-								>
-									<div class="inline-block text-4xl text-gray-800">
-										<network
-											class="mx-2 cursor-pointer transition duration-300 ease-in-out hover:text-blue-800"
-											network="facebook"
-										>
-											<font-awesome-icon :icon="['fab', 'facebook-square']" />
-										</network>
-										<network
-											class="mx-2 cursor-pointer transition duration-300 ease-in-out hover:text-green-600"
-											network="line"
-										>
-											<font-awesome-icon :icon="['fab', 'line']" />
-										</network>
-										<network
-											class="mx-2 cursor-pointer transition duration-300 ease-in-out hover:text-blue-600"
-											network="linkedin"
-										>
-											<font-awesome-icon :icon="['fab', 'linkedin']" />
-										</network>
-										<network
-											class="mx-2 cursor-pointer transition duration-300 ease-in-out hover:text-blue-700"
-											network="telegram"
-										>
-											<font-awesome-icon :icon="['fab', 'telegram']" />
-										</network>
-										<network
-											class="mx-2 cursor-pointer transition duration-300 ease-in-out hover:text-blue-500"
-											network="twitter"
-										>
-											<font-awesome-icon :icon="['fab', 'twitter-square']" />
-										</network>
-										<network
-											class="mx-2 cursor-pointer transition duration-300 ease-in-out hover:text-green-700"
-											network="whatsapp"
-										>
-											<font-awesome-icon :icon="['fab', 'whatsapp']" />
-										</network>
-									</div>
-								</social-sharing>
-							</div>
-							<div slot="footer" class="bg-dark"></div>
-						</modal>
-					</div>
-				</div>
-				<img
-					class="object-contain justify-end w-4/12 h-full md:w-3/12 mx-auto py-6"
-					src="../assets/illustration-friends.png"
-				/>
-			</div>
-		</div>
-		<div
-			class="flex flex-col bg-cover"
-			:style="{ backgroundImage: `url(${background.ungu})` }"
-		>
-			<div class="flex flex-row my-12 mx-4">
-				<img
-					class="object-contain justify-end w-3/12 h-full mx-auto mr-0 pt-6"
-					src="../assets/illustration-coupon.png"
-				/>
-				<div
-					class="flex flex-col w-7/12 sm:w-5/12 lg:w-5/12 justify-center text-white mx-auto"
-				>
-					<p class="text-xl md:text-3xl font-bold">Kode Voucher</p>
-					<div class="flex flex-row">
-						<div class="flex w-full lg:w-1/2 xl:w-5/12 my-3 rounded border-2">
-							<p class="mx-auto py-2 px-2 font-semibold text-normal sm:text-lg">
-								RILIVSEHATMENTAL
-							</p>
-						</div>
-						<svg
-							@click="doCopy"
-							class="w-10 h-10 my-auto ml-4 cursor-pointer"
-							xmlns="http://www.w3.org/2000/svg"
-							version="1.0"
-							viewBox="0 0 512.000000 512.000000"
-							preserveAspectRatio="xMidYMid meet"
-						>
-							<g
-								class="fill-current"
-								transform="translate(512.000000,512.000000) scale(0.100000,-0.100000) rotate(90)"
-								fill="#000000"
-								stroke="none"
-							>
-								<path
-									d="M1608 4679 c-68 -16 -152 -66 -204 -121 -70 -74 -103 -142 -119 -245 l-7 -43 1389 -2 1388 -3 3 -1384 2 -1384 57 6 c165 17 320 167 352 342 15 78 15 2419 1 2495 -26 135 -118 252 -243 311 l-72 34 -1255 2 c-708 0 -1271 -3 -1292 -8z"
-								/>
-								<path
-									d="M772 3829 c-126 -24 -246 -120 -303 -242 l-34 -72 0 -1275 0 -1275 34 -72 c59 -125 176 -217 311 -243 76 -14 2417 -14 2495 1 132 24 245 111 306 234 l34 70 0 1285 0 1285 -34 70 c-61 123 -174 210 -306 234 -71 13 -2436 13 -2503 0z m2428 -1589 l0 -1180 -1172 2 -1173 3 -3 1165 c-1 641 0 1171 3 1178 3 9 248 12 1175 12 l1170 0 0 -1180z"
-								/>
-							</g>
-						</svg>
-					</div>
-					<p class="md:text-lg mt-1 leading-relaxed text-indigo-100">
-						Anda bisa memasukkan kode voucher di atas dalam Aplikasi RILIV untuk
-						mendapatkan GRATIS tujuh hari Meditasi bersama Riliv Hening
-					</p>
-					<div class="w-6/12 md:w-5/12 mt-6">
-						<a href="https://riliv.page.link/home2">
-							<v-button
-								class="py-3"
-								msg="Coba Aplikasi"
-								variant="default"
-							></v-button>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -574,8 +396,7 @@ import Tab from "@/components/Tab.vue";
 import Tabs from "@/components/base/Tabs.vue";
 import VueApexCharts from "vue-apexcharts";
 import axios from "axios";
-import modal from "@/components/Modal.vue";
-import SocialSharing from "vue-social-sharing";
+// import modal from "@/components/Modal.vue";
 
 import ungu from "../assets/bg_ungu.png";
 import orange from "../assets/bg_orange.png";
@@ -587,8 +408,6 @@ export default {
 		Tabs,
 		Tab,
 		apexchart: VueApexCharts,
-		modal,
-		SocialSharing,
 	},
 	data: function() {
 		return {
@@ -627,6 +446,10 @@ export default {
 		await this.getData();
 	},
 	methods: {
+		cobaAplikasi() {
+			window.location.href =
+				"https://play.google.com/store/apps/details?id=nozero.apps1";
+		},
 		getColor(level) {
 			if (level == "Normal") {
 				return "#2FD2E5";
@@ -741,6 +564,9 @@ export default {
 };
 </script>
 <style>
+.bg-riliv-soft {
+	background-color: #e2f8fa;
+}
 .isLoaded {
 	filter: blur(5px);
 }
