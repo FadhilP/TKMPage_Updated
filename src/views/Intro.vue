@@ -9,13 +9,8 @@
 		</div>
 		<div class="flex flex-col lg:flex-row w-full pb-10">
 			<div
-				class="flex flex-col w-11/12 lg:w-6/12 px-4 md:px-10 lg:pl-32 mx-auto"
+				class="xl:mt-12 lg:mt-8 flex flex-col w-11/12 lg:w-6/12 px-4 md:px-10 lg:pl-32 mx-auto"
 			>
-				<img
-					class="object-contain w-4/12 lg:w-5/12 mx-auto lg:ml-0 mb-4"
-					src="../assets/section-1.png"
-					alt=""
-				/>
 				<h1
 					class="text-3xl md:text-3xl text-gray-800 text-center lg:text-left font-sans font-semibold"
 				>
@@ -42,10 +37,10 @@
 				</div>
 			</div>
 			<div
-				class="mt-10 lg:ml-40 w-full lg:w-6/12 lg:rounded-r-none lg:rounded-l-lg"
+				class="mt-10 lg:ml-40 w-full lg:w-6/12 lg:rounded-r-none lg:rounded-l-lg relative"
 				style="background: #10CBE1;"
 			>
-				<div class="lg:pl-16 mt-10 text-white font-semibold">
+				<div class="lg:pl-16 mt-10 text-white font-semibold lg:pb-40">
 					<p class="text-3xl lg:text-2xl pb-4 text-center lg:text-left">
 						Skala Jawaban
 					</p>
@@ -80,69 +75,71 @@
 						</tbody>
 					</table>
 				</div>
-				<div
-					class="hidden lg:block relative w-7/12 xl:w-5/12 -ml-20 my-6 rounded-lg bg-white shadow-xl border-2 border-gray-100"
-				>
-					<p
-						class="absolute border w-10/12 border-gray-100"
-						style="top:50%"
-					></p>
-					<div class="flex py-1 flex-col w-full">
-						<table class="table-auto mx-auto">
-							<thead>
-								<tr>
-									<th class="px-5 py-3">0</th>
-									<th class="px-5 py-3">1</th>
-									<th class="px-5 py-3">2</th>
-									<th class="px-5 py-3">3</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="px-5 py-3">
-										<label class="inline-flex items-center">
-											<input
-												type="radio"
-												class="form-radio"
-												name="radio"
-												value="0"
-												checked
-											/>
-										</label>
-									</td>
-									<td class="px-5 py-3">
-										<label class="inline-flex items-center">
-											<input
-												type="radio"
-												class="form-radio"
-												name="radio"
-												value="1"
-											/>
-										</label>
-									</td>
-									<td class="px-5 py-3">
-										<label class="inline-flex items-center">
-											<input
-												type="radio"
-												class="form-radio"
-												name="radio"
-												value="2"
-											/>
-										</label>
-									</td>
-									<td class="px-5 py-3">
-										<label class="inline-flex items-center">
-											<input
-												type="radio"
-												class="form-radio"
-												name="radio"
-												value="3"
-											/>
-										</label>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+				<div class="absolute" style="bottom: 25px; left: -70px;">
+					<div
+						class="hidden lg:block relative  my-6 rounded-lg bg-white shadow-xl border-2 border-gray-100"
+					>
+						<p
+							class="absolute border w-10/12 border-gray-100"
+							style="bottom: 0px;"
+						></p>
+						<div class="flex py-1 flex-col w-full">
+							<table class="table-auto mx-auto">
+								<thead>
+									<tr>
+										<th class="px-5 py-3">0</th>
+										<th class="px-5 py-3">1</th>
+										<th class="px-5 py-3">2</th>
+										<th class="px-5 py-3">3</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="px-5 py-3">
+											<label class="inline-flex items-center">
+												<input
+													type="radio"
+													class="form-radio"
+													name="radio"
+													value="0"
+													checked
+												/>
+											</label>
+										</td>
+										<td class="px-5 py-3">
+											<label class="inline-flex items-center">
+												<input
+													type="radio"
+													class="form-radio"
+													name="radio"
+													value="1"
+												/>
+											</label>
+										</td>
+										<td class="px-5 py-3">
+											<label class="inline-flex items-center">
+												<input
+													type="radio"
+													class="form-radio"
+													name="radio"
+													value="2"
+												/>
+											</label>
+										</td>
+										<td class="px-5 py-3">
+											<label class="inline-flex items-center">
+												<input
+													type="radio"
+													class="form-radio"
+													name="radio"
+													value="3"
+												/>
+											</label>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 				<div

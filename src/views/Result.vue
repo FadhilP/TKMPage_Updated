@@ -358,24 +358,29 @@
 		</div>
 		<div class="flex flex-col items-center mt-12 bg-riliv-soft">
 			<div class="flex flex-col pb-24 pt-24 md:flex-row w-11/12 md:w-8/12">
-				<div class="overflow-hidden">
+				<div class="overflow-hidden md:pl-0 lg:pl-12">
 					<img
-						class="min-w-0 object-contain h-auto mb-8 lg:m-0"
+						class="min-w-0 object-contain h-auto mb-8 lg:m-0 mx-auto hidden sm:block"
 						src="../assets/illustration-doctor.png"
+					/>
+					<img
+						class="min-w-0 object-contain h-auto mb-8 lg:m-0 mx-auto block sm:hidden"
+						src="../assets/illustration-doctor.png"
+						style="max-width: 300px"
 					/>
 				</div>
 				<div
 					class="flex flex-col text-center md:text-left text-gray-800 my-auto md:ml-16"
 				>
-					<p class="text-4xl font-semibold">
+					<p class="text-3xl font-semibold">
 						Terima kasih telah mencari tahu kondisi kesehatan mental Anda
 					</p>
-					<p class="text-xl leading-relaxed mt-2" style="max-width: 660px;">
+					<p class="text-xl leading-relaxed mt-2" style="max-width: 700px;">
 						Tes ini merupakan langkah awal yang tepat dalam memahami kondisi
-						kesehatan mental Anda saat ini. Anda dapat menggunakan layanan Riliv
-						untuk berkonsultasi dengan psikolog profesional dan nikmati akses
-						beragam konten meditasi yang membantu Anda lebih mindful setiap
-						hari.
+						kesehatan mental Anda saat ini.<br /><br />
+						Anda dapat menggunakan layanan Riliv untuk berkonsultasi dengan
+						psikolog profesional dan nikmati akses beragam konten meditasi yang
+						membantu Anda lebih mindful setiap hari.
 					</p>
 					<div class="w-5/12 md:w-4/12 mx-auto md:mx-0 mt-4">
 						<v-button
