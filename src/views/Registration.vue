@@ -217,7 +217,7 @@ export default {
 	/* eslint-disable no-console */
 	async created() {},
 	async mounted() {
-		window.scrollTo(0, 0);
+		window.location.href = "#";
 		this.submit();
 		this.username = localStorage.getItem("username");
 		this.person.name = this.username;
