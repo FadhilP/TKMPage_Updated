@@ -31,7 +31,9 @@
 					akurat. <br /><br />Tak perlu khawatir, hasil tes Anda tidak ada
 					kaitannya pada penilaian performa kinerja di perusahaan Anda.
 					<br /><br />
-					<strong>Aturan pilihan angka jawaban ada di samping:</strong>
+					<strong class="hidden lg:block"
+						>Aturan pilihan angka jawaban ada di samping:</strong
+					>
 				</p>
 				<div class="hidden lg:flex flex-row">
 					<router-link to="/test">
