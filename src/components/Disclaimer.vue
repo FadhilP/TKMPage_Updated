@@ -3,62 +3,6 @@
 		<div class="scroll-here pt-20 px-10 lg:px-48 bg-blue-50">
 			<!--Center-->
 			<div class="">
-				<h1
-					class="w-full sm:w-9/12 mx-auto pb-10 text-4xl text-gray-800 text-center font-sans font-semibold"
-				>
-					Catatan penting sebelum anda mulai!
-				</h1>
-				<div class="w-full sm:w-11/12 lg:w-10/12 lg:flex mx-auto">
-					<div
-						class="shadow-xl border-gray-100 border-2 p-4 flex flex-col justify-between leading-normal rounded-lg bg-white"
-					>
-						<div
-							class="flex-col p-4 text-sm sm:text-lg text-gray-600 font-sans leading-relaxed items-center"
-						>
-							<ul class="pl-8 list-outside list-decimal">
-								<li class="pb-2">
-									<b>Jangan</b> gunakan alat tes ini sebagai acuan diagnosis.
-								</li>
-								<li class="pb-2">
-									Gunakan tes ini sebagai gambaran umum kondisi Anda dan
-									menentukan kebutuhan untuk ke profesional.
-								</li>
-								<li class="pb-2">
-									Seluruh data dan hasil tes bersifat <b>rahasia</b> dan hanya
-									digunakan untuk keperluan pemilihan layanan lanjutan.
-								</li>
-								<li class="pb-2">
-									Seluruh alat tes ini diadaptasi berdasarkan alat tes bebas dan
-									daring sehingga dapat diakses secara <b>gratis</b>. Riliv
-									tidak memiliki hak cipta alat tes satu pun.
-								</li>
-								<li class="pb-2">
-									Jika kamu memiliki masalah kesehatan mental,
-									<b>segera hubungi bantuan profesional</b>.
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<p
-					v-show="authFail"
-					class="w-9/12 mx-auto bg-red-200 rounded text-center text-red-600 font-semibold p-4 my-8"
-				>
-					{{ this.error }}
-				</p>
-				<div
-					class="w-4/12 md:w-3/12 xl:w-2/12 mx-auto"
-					:class="{ 'mt-16': !authFail }"
-				>
-					<div class="shadow-lg rounded">
-						<v-button
-							@click.native="toggleModal()"
-							class="py-3 lg:py-4"
-							:class="loadingClasses"
-							msg="Lanjutkan"
-						/>
-					</div>
-				</div>
 				<!-- MODAL UNTUK CEK KODE PERUSAHAAN -->
 				<modal v-show="isModalVisible" @close="toggleModal()">
 					<div slot="header" class="mx-auto text-center mt-4">
@@ -83,7 +27,7 @@
 										value=""
 									/>
 									<p v-if="showErrorMessage" class="text-red-600 text-sm">
-										Mohon maaf kode perusahaan yang anda masukkan tidak valid
+										Mohon maaf kode perusahaan yang Anda masukkan tidak valid
 									</p>
 								</div>
 								<div v-else class="block text-left">
@@ -91,7 +35,7 @@
 										<strong class="text-gray-700 font-semibold"
 											>Selamat, kode yang Anda masukkan telah
 											terverifikasi!</strong
-										><br />Silahkan login melalui akun Google anda dengan cara
+										><br />Silahkan login melalui akun Google Anda dengan cara
 										menekan tombol
 										<span class="text-gray-700 font-semibold">Lanjutkan</span>
 										di bawah!
@@ -128,6 +72,62 @@
 					</div>
 				</modal>
 				<!-- MODAL UNTUK CEK KODE PERUSAHAAN END -->
+				<h1
+					class="w-full sm:w-9/12 mx-auto pb-10 text-4xl text-gray-800 text-center font-sans font-semibold"
+				>
+					Catatan penting sebelum Anda mulai!
+				</h1>
+				<div class="w-full sm:w-11/12 lg:w-10/12 lg:flex mx-auto">
+					<div
+						class="shadow-xl border-gray-100 border-2 p-4 flex flex-col justify-between leading-normal rounded-lg bg-white"
+					>
+						<div
+							class="flex-col p-4 text-sm sm:text-lg text-gray-600 font-sans leading-relaxed items-center"
+						>
+							<ul class="pl-8 list-outside list-decimal">
+								<li class="pb-2">
+									<b>Jangan</b> gunakan alat tes ini sebagai acuan diagnosis.
+								</li>
+								<li class="pb-2">
+									Gunakan tes ini sebagai gambaran umum kondisi Anda dan
+									menentukan kebutuhan untuk ke profesional.
+								</li>
+								<li class="pb-2">
+									Seluruh data dan hasil tes bersifat <b>rahasia</b> dan hanya
+									digunakan untuk keperluan pemilihan layanan lanjutan.
+								</li>
+								<li class="pb-2">
+									Seluruh alat tes ini diadaptasi berdasarkan alat tes bebas dan
+									daring sehingga dapat diakses secara <b>gratis</b>. Riliv
+									tidak memiliki hak cipta alat tes satu pun.
+								</li>
+								<li class="pb-2">
+									Jika Anda memiliki masalah kesehatan mental,
+									<b>segera hubungi bantuan profesional</b>.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p
+					v-show="authFail"
+					class="w-9/12 mx-auto bg-red-200 rounded text-center text-red-600 font-semibold p-4 my-8"
+				>
+					{{ this.error }}
+				</p>
+				<div
+					class="w-4/12 md:w-3/12 xl:w-2/12 mx-auto"
+					:class="{ 'mt-16': !authFail }"
+				>
+					<div class="shadow-lg rounded">
+						<v-button
+							@click.native="toggleModal()"
+							class="py-3 lg:py-4"
+							:class="loadingClasses"
+							msg="Lanjutkan"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<img
@@ -179,6 +179,7 @@ export default {
 		toggleLoading: function() {
 			this.isLoading = !this.isLoading;
 		},
+		/* eslint-disable no-console */
 		toggleModal: function() {
 			this.isModalVisible = !this.isModalVisible;
 		},

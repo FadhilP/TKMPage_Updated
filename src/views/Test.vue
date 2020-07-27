@@ -279,13 +279,15 @@
 						<modal v-show="isModalVisible" @close="toggleModal">
 							<div slot="header" class="mx-auto text-center mt-12">
 								<p class="font-bold text-gray-800">
-									Apakah kamu yakin dengan pilihan jawabanmu?
+									Kami mendeteksi adanya pola jawaban yang sama
 								</p>
 							</div>
 							<div slot="body" class="w-11/12 text-lg mx-auto mb-10">
 								<p class="text-gray-700">
-									Pastikan pilihan jawabanmu telah sesuai dengan kondisimu ya!
-									karena tes ini hanya bisa diambil setelah 10 hari
+									Apakah jawaban yang Anda masukkan telah sesuai dengan kondisi
+									Anda dalam 7 hari terakhir? <br />
+									Apabila Anda ragu, Anda dapat menekan tombol "Tidak" dan
+									review kembali jawaban Anda
 								</p>
 							</div>
 							<div slot="footer" class="w-full">

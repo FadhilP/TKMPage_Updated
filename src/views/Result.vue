@@ -396,7 +396,7 @@
 					<p class="text-4xl font-semibold">Ikuti tes lagi</p>
 					<p class="text-xl leading-relaxed mt-2">
 						Anda dapat melakukan Tes Kesehatan Mental lagi setelah 10 hari
-						terhitung dari anda melakukan tes kesehatan mental sebelumnya
+						terhitung dari Anda melakukan tes kesehatan mental sebelumnya
 					</p>
 					<div class="w-5/12 md:w-4/12 mx-auto md:mx-0 mt-4">
 						<v-button

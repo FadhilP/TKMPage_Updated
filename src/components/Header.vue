@@ -29,25 +29,10 @@
 					msg="Mulai Assessment Sekarang"
 				></v-button>
 			</div>
-			<div class="flex flex-row pt-10 justify-center lg:justify-start">
-				<div class="flex flex-col">
-					<img
-						class="object-contain h-16 lg:h-32 px-5 pl-0"
-						src="../assets/logo-kotamadya.png"
-						alt=""
-					/>
-				</div>
-				<div class="flex flex-col">
-					<img
-						class="object-contain h-16 lg:h-32 px-5"
-						src="../assets/logo-dinkes.png"
-						alt=""
-					/>
-				</div>
-			</div>
+			<div class="flex flex-row pt-10 justify-center lg:justify-start"></div>
 		</div>
 		<!--Right Col-->
-		<div class="hidden xl:flex w-5/12 xl:w-7/12 items-end flex-col pt-10 pl-20">
+		<div class="hidden lg:flex w-5/12 xl:w-7/12 items-end flex-col pt-10 pl-20">
 			<img class="object-contain" src="../assets/section-1.png" alt="" />
 		</div>
 	</div>
