@@ -125,35 +125,13 @@
 									</tr>
 								</thead>
 								<t-content
-									name="radio-1"
-									text="Saya merasa sulit untuk beristirahat"
+									v-for="(data, index) in dataSoal.slice(0, 7)"
+									v-bind:key="index + 1"
+									v-bind:name="`radio-${index + 1}`"
+									v-bind:text="data.question[0]"
+									v-bind:subtext="data.question[1]"
 								></t-content>
-								<t-content
-									name="radio-2"
-									text="Saya menyadari mulut saya kering"
-								></t-content>
-								<t-content
-									name="radio-3"
-									text="Sepertinya saya tidak bisa merasakan perasaan positif sama sekali"
-								></t-content>
-								<t-content
-									name="radio-4"
-									text="Saya mengalami kondisi sulit bernafas"
-									subtext="seperti: bernafas sangat cepat atau sesak nafas tanpa adanya aktivitas fisik"
-								></t-content>
-								<t-content
-									name="radio-5"
-									text="Saya merasa sulit untuk membangun keinginan melakukan sesuatu"
-								></t-content>
-								<t-content
-									name="radio-6"
-									text="Saya cenderung bereaksi berlebihan terhadap situasi"
-								></t-content>
-								<t-content
-									name="radio-7"
-									text="Saya mengalami tubuh saya gemetar"
-									subtext="seperti: tangan bergemetar"
-								></t-content>
+
 								<tbody></tbody>
 							</table>
 						</tab-content>
@@ -176,34 +154,13 @@
 									</tr>
 								</thead>
 								<t-content
-									name="radio-8"
-									text="Saya merasa terlalu sering melakukan aktivitas otomatis untuk merespon cemas"
-									subtext="Misal: menggigit kuku, menarik nafas panjang berulang, bicara banyak saat cemas, memotong pembicaraan yang membuat cemas, dsb."
+									v-for="(data, index) in dataSoal.slice(7, 14)"
+									v-bind:key="index + 8"
+									v-bind:name="`radio-${index + 8}`"
+									v-bind:text="data.question[0]"
+									v-bind:subtext="data.question[1]"
 								></t-content>
-								<t-content
-									name="radio-9"
-									text="Saya khawatir tentang situasi di mana saya mungkin panik dan mempermalukan diri sendiri"
-								></t-content>
-								<t-content
-									name="radio-10"
-									text="Saya merasa tidak ada yang bisa saya harapkan"
-								></t-content>
-								<t-content
-									name="radio-11"
-									text="Saya merasa gelisah"
-								></t-content>
-								<t-content
-									name="radio-12"
-									text="Saya merasa sulit untuk tenang"
-								></t-content>
-								<t-content
-									name="radio-13"
-									text="Saya merasa sedih dan galau"
-								></t-content>
-								<t-content
-									name="radio-14"
-									text="Saya tidak bisa menerima terhadap apa pun yang membuat saya tidak bisa melanjutkan apa yang saya lakukan"
-								></t-content>
+
 								<tbody></tbody>
 							</table>
 						</tab-content>
@@ -226,33 +183,11 @@
 									</tr>
 								</thead>
 								<t-content
-									name="radio-15"
-									text="Saya merasa saya hampir panik"
-								></t-content>
-								<t-content
-									name="radio-16"
-									text="Saya tidak bisa antusias pada apapun"
-								></t-content>
-								<t-content
-									name="radio-17"
-									text="Saya merasa saya tidak berharga sebagai manusia"
-								></t-content>
-								<t-content
-									name="radio-18"
-									text="Saya merasa agak sensitif"
-								></t-content>
-								<t-content
-									name="radio-19"
-									text="Saya menyadari kondisi jantung saya meskipun tidak adanya aktivitas fisik"
-									subtext="Misal: Rasa peningkatan denyut jantung, jantung berdebar"
-								></t-content>
-								<t-content
-									name="radio-20"
-									text="Saya merasa takut tanpa alasan yang kuat"
-								></t-content>
-								<t-content
-									name="radio-21"
-									text="Saya merasa bahwa hidup tidak ada artinya"
+									v-for="(data, index) in dataSoal.slice(14, dataSoal.length)"
+									v-bind:key="index + 15"
+									v-bind:name="`radio-${index + 15}`"
+									v-bind:text="data.question[0]"
+									v-bind:subtext="data.question[1]"
 								></t-content>
 								<tbody></tbody>
 							</table>
@@ -358,6 +293,7 @@ export default {
 	},
 	/* eslint-disable no-console */
 	async mounted() {
+		// GET QUESTION DATA
 		await axios
 			.get(this.getQuestionsAPI, {
 				headers: {
@@ -374,6 +310,20 @@ export default {
 					this.$router.push({ name: "home" });
 				}
 			);
+		// SPLIT TEXT AND SUBTEXT IN QUESTION DATA
+		let temporaryData = this.dataSoal;
+		temporaryData.forEach((data, index) => {
+			let mainQuestion = temporaryData[index].question;
+			let result = mainQuestion.split("(");
+			if (result.length === 2) result[1] = result[1].slice(0, -1);
+			this.dataSoal[index].question = result;
+		});
+		// SORT QUESTION NUMBER
+		temporaryData = this.dataSoal;
+		temporaryData.sort(function(a, b) {
+			return a.questionNumber - b.questionNumber;
+		});
+		this.dataSoal = temporaryData;
 	},
 	/* eslint-enable no-console */
 	methods: {
