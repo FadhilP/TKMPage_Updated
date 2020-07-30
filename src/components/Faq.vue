@@ -8,10 +8,7 @@
 				Mengenai Tes Kesehatan Mental
 			</h1>
 			<div>
-				<dropdown
-					:items="items"
-					class="w-full lg:w-10/12 xl:w-full mx-auto"
-				></dropdown>
+				<dropdown v-bind:items="items"> </dropdown>
 			</div>
 		</div>
 	</div>
@@ -29,21 +26,36 @@ export default {
 			items: [
 				{
 					title: "Apa itu tes kesehatan mental?",
-					contents: `Anda bisa mencoba tes kesehatan mental di bawah ini secara gratis.
-                    Tujuannya adalah membantu Anda mengetahui kondisi kesehatan mentalmu.
-                    Anda pun bisa menentukan langkah selanjutnya. Jangan khawatir: seluruh data
-                    dan hasil tes Anda bersifat rahasia!
-                `,
+					content: `
+						<span>
+							Tes kesehatan mental ini merupakan <em>screening</em> awal agar
+							Anda dapat mengetahui kondisi kesehatan mental Anda. Sehingga,
+							Anda bisa memahami bagaimana kondisi Anda dan menentukan langkah
+							selanjutnya.
+						</span>`,
 				},
 				{
-					title: "Metode apa yang digunakan untuk mengetes?",
-					contents: `Dalam tes ini, metode yang digunakan adalah DASS21. Dengan metode ini, dapat diketahui gambaran awal kondisi kesehatan mental yang terkait depresi, kecemasan, dan stres.`,
+					title: "Alat ukur apa yang digunakan dalam tes kesehatan mental ini?",
+					content: `
+						<span>
+							Alat ukur yang digunakan pada tes ini adalah DASS21 (<em>Depression
+							Anxiety Stress Scale</em>). Alat ukur ini berupasatu set yang terdiri
+							dari tiga skala penilaian pribadi untuk mengukur kondisi emosional
+							dari depresi, kecemasan dan stress
+						</span>`,
 				},
 				{
 					title: "Apa manfaatnya tes kesehatan mental ini bagi saya?",
-					contents: `Tes ini membantu Anda mendapat gambaran kesehatan mental Anda secara umum. Gunakan tes ini sebagai acuan untuk mendapat bantuan psikologis dengan profesional.`,
+					content: `
+						<span>
+							Tes ini membantu Anda mendapat gambaran kesehatan mental Anda
+							secara umum. Anda dapat melakukan tes ini sebagai acuan untuk
+							mendapat bantuan psikologis dengan profesional.
+						</span>
+					`,
 				},
 			],
+
 			//msg: "Welcome to Your Vue.js App"
 		};
 	},

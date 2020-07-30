@@ -174,13 +174,13 @@
 				<div class="w-full md:w-8/12 mx-auto md:ml-0">
 					<tabs>
 						<tab name="Depresi" :selected="true">
-							<p class="my-1">
+							<p class="my-1 text-sm text-gray-500">
 								DEPRESI merupakan gangguan perasaan (afek) yang ditandai dengan
 								perasaan kehilangan kegembiraan/gairah hidup yang disertai
 								dengan gejala-gejala lain, seperti gangguan tidur dan gangguan
 								selera makan. (Lumongga Lubis, 2009).
 							</p>
-							<p class="mt-4">
+							<p class="mt-4 text-sm text-gray-500">
 								Depresi biasanya terjadi saat stres yang dialami oleh seseorang
 								tidak kunjung reda. Depresi yang dialami biasanya berkorelasi
 								dengan kejadian traumatis yang baru saja terjadi atau menimpa
@@ -241,11 +241,11 @@
 							</p>
 						</tab>
 						<tab name="Kecemasan">
-							<p class="my-1">
+							<p class="my-1 text-sm text-gray-500">
 								Kecemasan adalah tanggapan dari sebuah ancaman, nyata ataupun
 								khayal. (Lumongga Lubis, 2009).
 							</p>
-							<p class="mt-4">
+							<p class="mt-4 text-sm text-gray-500">
 								Individu mengalami kecemasan karena adanya ketidakpastian di
 								masa mendatang. Misalnya, seseorang yang menghadapi masalah
 								penting dan belum mendapat penyelesaian yang pasti. Kecemasan
@@ -295,7 +295,7 @@
 							</p>
 						</tab>
 						<tab name="Stres">
-							<p class="my-1">
+							<p class="my-1 text-sm text-gray-500">
 								Stres merupakan bentuk interaksi antara individu dengan
 								lingkungannya, yang dinilai sebagai sesuatu yang membebani atau
 								melampaui kemampuan yang dimilikinya, serta mengancam
@@ -303,7 +303,7 @@
 								menunjukkan respons individu terhadap tuntutan lingkungan.
 								(Lazarus, 1984).
 							</p>
-							<p class="mt-4">
+							<p class="mt-4 text-sm text-gray-500">
 								Secara terus-menerus individu akan menilai tuntutan dan hambatan
 								yang terdapat dalam lingkungan, serta menilai kemampuan dirinya
 								untuk mengatasi tuntutan tersebut. Apabila individu merasakan
