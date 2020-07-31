@@ -75,9 +75,6 @@ export default {
 		BaseAccordion,
 	},
 	/* eslint-disable no-console */
-	mounted() {
-		console.log(this.items);
-	},
 };
 </script>
 
