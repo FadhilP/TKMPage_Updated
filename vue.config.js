@@ -2,5 +2,5 @@
 // CHANGE /TKMPage/ TO /
 
 module.exports = {
-	publicPath: process.env.NODE_ENV === "production" ? "/TKMPage/" : "/",
+	publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
 };
