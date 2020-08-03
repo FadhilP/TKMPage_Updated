@@ -559,7 +559,7 @@ export default {
 				(error) => {
 					const res = error;
 					console.log(res.data);
-					// this.$router.push({ name: "home" });
+					this.$router.push({ name: "home" });
 				}
 			);
 		},
