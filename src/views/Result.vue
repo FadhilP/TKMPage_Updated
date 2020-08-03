@@ -174,19 +174,23 @@
 				<div class="w-full md:w-8/12 mx-auto md:ml-0">
 					<tabs>
 						<tab name="Depresi" :selected="true">
-							<p class="my-1 text-sm text-gray-500">
-								DEPRESI merupakan gangguan perasaan (afek) yang ditandai dengan
-								perasaan kehilangan kegembiraan/gairah hidup yang disertai
-								dengan gejala-gejala lain, seperti gangguan tidur dan gangguan
-								selera makan. (Lumongga Lubis, 2009).
+							<p class="my-1 text-sm text-gray-800">
+								<em>
+									DEPRESI merupakan gangguan perasaan (afek) yang ditandai
+									dengan perasaan kehilangan kegembiraan/gairah hidup yang
+									disertai dengan gejala-gejala lain, seperti gangguan tidur dan
+									gangguan selera makan. (Lumongga Lubis, 2009).
+								</em>
 							</p>
-							<p class="mt-4 text-sm text-gray-500">
-								Depresi biasanya terjadi saat stres yang dialami oleh seseorang
-								tidak kunjung reda. Depresi yang dialami biasanya berkorelasi
-								dengan kejadian traumatis yang baru saja terjadi atau menimpa
-								seseorang, misalnya kematian seseorang yang sangat dicintai atau
-								kehilangan pekerjaan yang sangat disukai. (Lumongga Lubis,
-								2009).
+							<p class="mt-4 text-sm text-gray-800">
+								<em>
+									Depresi biasanya terjadi saat stres yang dialami oleh
+									seseorang tidak kunjung reda. Depresi yang dialami biasanya
+									berkorelasi dengan kejadian traumatis yang baru saja terjadi
+									atau menimpa seseorang, misalnya kematian seseorang yang
+									sangat dicintai atau kehilangan pekerjaan yang sangat disukai.
+									(Lumongga Lubis, 2009).
+								</em>
 							</p>
 							<p class="mt-4">
 								Berdasarkan jawaban yang Anda berikan, jika pengkategorian hasil
@@ -203,9 +207,7 @@
 								<strong>sedang, parah atau sangat parah,</strong>
 								mungkin Anda merasakan satu atau beberapa kondisi di bawah ini:
 							</p>
-							<ul
-								class="w-10/12 list-disc list-outside ml-6 my-4 text-gray-800 text-md"
-							>
+							<ul class="w-10/12 list-disc list-outside ml-6 my-4 text-md">
 								<li class="my-2">
 									Kehilangan ketertarikan dan tidak mendapatkan lagi kesenangan
 									dari aktivitas yang disukai
@@ -241,17 +243,21 @@
 							</p>
 						</tab>
 						<tab name="Kecemasan">
-							<p class="my-1 text-sm text-gray-500">
-								Kecemasan adalah tanggapan dari sebuah ancaman, nyata ataupun
-								khayal. (Lumongga Lubis, 2009).
+							<p class="my-1 text-sm text-gray-800">
+								<em>
+									Kecemasan adalah tanggapan dari sebuah ancaman, nyata ataupun
+									khayal. (Lumongga Lubis, 2009).</em
+								>
 							</p>
-							<p class="mt-4 text-sm text-gray-500">
-								Individu mengalami kecemasan karena adanya ketidakpastian di
-								masa mendatang. Misalnya, seseorang yang menghadapi masalah
-								penting dan belum mendapat penyelesaian yang pasti. Kecemasan
-								juga bisa berkembang menjadi suatu gangguan jika menimbulkan
-								ketakutan yang hebat dan menetap pada individu tersebut.
-								(Lumongga Lubis, 2009).
+							<p class="mt-4 text-sm text-gray-800">
+								<em>
+									Individu mengalami kecemasan karena adanya ketidakpastian di
+									masa mendatang. Misalnya, seseorang yang menghadapi masalah
+									penting dan belum mendapat penyelesaian yang pasti. Kecemasan
+									juga bisa berkembang menjadi suatu gangguan jika menimbulkan
+									ketakutan yang hebat dan menetap pada individu tersebut.
+									(Lumongga Lubis, 2009).</em
+								>
 							</p>
 							<p class="mt-4">
 								Berdasarkan jawaban yang Anda berikan, jika pengkategorian hasil
@@ -268,9 +274,7 @@
 								<strong>sedang, parah atau sangat parah,</strong>
 								mungkin Anda merasakan satu atau beberapa kondisi di bawah ini:
 							</p>
-							<ul
-								class="w-10/12 list-disc list-outside ml-6 my-4 text-gray-800 text-md"
-							>
+							<ul class="w-10/12 list-disc list-outside ml-6 my-4 text-md">
 								<li class="my-2">
 									Sulit mengendalikan kekhawatiran
 								</li>
@@ -295,23 +299,27 @@
 							</p>
 						</tab>
 						<tab name="Stres">
-							<p class="my-1 text-sm text-gray-500">
-								Stres merupakan bentuk interaksi antara individu dengan
-								lingkungannya, yang dinilai sebagai sesuatu yang membebani atau
-								melampaui kemampuan yang dimilikinya, serta mengancam
-								kesejahteraannya. Stres merupakan fenomena individual dan
-								menunjukkan respons individu terhadap tuntutan lingkungan.
-								(Lazarus, 1984).
+							<p class="my-1 text-sm text-gray-800">
+								<em>
+									Stres merupakan bentuk interaksi antara individu dengan
+									lingkungannya, yang dinilai sebagai sesuatu yang membebani
+									atau melampaui kemampuan yang dimilikinya, serta mengancam
+									kesejahteraannya. Stres merupakan fenomena individual dan
+									menunjukkan respons individu terhadap tuntutan lingkungan.
+									(Lazarus, 1984).</em
+								>
 							</p>
-							<p class="mt-4 text-sm text-gray-500">
-								Secara terus-menerus individu akan menilai tuntutan dan hambatan
-								yang terdapat dalam lingkungan, serta menilai kemampuan dirinya
-								untuk mengatasi tuntutan tersebut. Apabila individu merasakan
-								ketidakseimbangan antara tuntutan dengan kemampuan yang
-								dimilikinya, maka stres akan muncul. Tuntutan yang secara umum
-								dapat memunculkan stres dapat diklasifikasikan dalam beberapa
-								bentuk, yaitu frustasi, konflik, tekanan, dan ancaman (Lumongga
-								Lubis, 2009).
+							<p class="mt-4 text-sm text-gray-800">
+								<em>
+									Secara terus-menerus individu akan menilai tuntutan dan
+									hambatan yang terdapat dalam lingkungan, serta menilai
+									kemampuan dirinya untuk mengatasi tuntutan tersebut. Apabila
+									individu merasakan ketidakseimbangan antara tuntutan dengan
+									kemampuan yang dimilikinya, maka stres akan muncul. Tuntutan
+									yang secara umum dapat memunculkan stres dapat
+									diklasifikasikan dalam beberapa bentuk, yaitu frustasi,
+									konflik, tekanan, dan ancaman (Lumongga Lubis, 2009).
+								</em>
 							</p>
 							<p class="mt-4">
 								Berdasarkan jawaban yang Anda berikan, jika pengkategorian hasil
@@ -328,9 +336,7 @@
 								<strong>sedang, parah atau sangat parah,</strong>
 								mungkin Anda merasakan satu atau beberapa kondisi di bawah ini:
 							</p>
-							<ul
-								class="w-10/12 list-disc list-outside ml-6 my-4 text-gray-800 text-md"
-							>
+							<ul class="w-10/12 list-disc list-outside ml-6 my-4 text-md">
 								<li class="my-2">Berkurangnya konsentrasi atau fokus</li>
 								<li class="my-2">Merasa kesepian</li>
 								<li class="my-2">Nyeri dada, detak jantung yang cepat</li>
@@ -553,7 +559,7 @@ export default {
 				(error) => {
 					const res = error;
 					console.log(res.data);
-					this.$router.push({ name: "home" });
+					// this.$router.push({ name: "home" });
 				}
 			);
 		},

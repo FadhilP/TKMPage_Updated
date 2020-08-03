@@ -39,9 +39,9 @@ export default {
 					content: `
 						<span>
 							Alat ukur yang digunakan pada tes ini adalah DASS21 (<em>Depression
-							Anxiety Stress Scale</em>). Alat ukur ini berupasatu set yang terdiri
+							Anxiety Stress Scale</em>). Alat ukur ini berupa satu set yang terdiri
 							dari tiga skala penilaian pribadi untuk mengukur kondisi emosional
-							dari depresi, kecemasan dan stress
+							dari depresi, kecemasan dan stres
 						</span>`,
 				},
 				{

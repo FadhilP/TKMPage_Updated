@@ -201,10 +201,14 @@ export default {
 					if (response.data.message === "Company code success") {
 						codeExist = true;
 						localStorage.setItem("kodePerusahaan", this.kodePerusahaan);
-					} else codeExist = false;
+					} else {
+						codeExist = false;
+						console.log(response);
+					}
 				})
 				.catch((err) => {
 					console.log(err);
+					console.log(err.data);
 					codeExist = false;
 				});
 

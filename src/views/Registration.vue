@@ -189,7 +189,7 @@ export default {
 			registrationAPI: process.env.VUE_APP_REGISTRATION_API,
 			jabatan: [
 				"Staff / Junior level",
-				"Supervisor / Junior level",
+				"Supervisor / Senior level",
 				"Manager",
 				"General Manager",
 				"Direktur",
