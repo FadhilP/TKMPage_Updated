@@ -461,18 +461,47 @@ export default {
 			window.location.href =
 				"https://play.google.com/store/apps/details?id=nozero.apps1";
 		},
-		getColor(level) {
-			if (level == "Normal") {
-				return "#2FD2E5";
-			} else if (level == "Ringan") {
-				return "#949ACB";
-			} else if (level == "Sedang") {
-				return "#CF93C1";
-			} else if (level == "Parah") {
-				return "#F598AE";
-			}
-			{
-				return "#F58982";
+		/* eslint-disable no-console */
+		getColor(score, type) {
+			if (type === "Depresi") {
+				// Depresi
+				if (score >= 0 && score <= 9) {
+					return "#2FD2E5";
+				} else if (score >= 10 && score <= 13) {
+					return "#949ACB";
+				} else if (score >= 14 && score <= 20) {
+					return "#CF93C1";
+				} else if (score >= 21 && score <= 27) {
+					return "#F598AE";
+				} else {
+					return "#F58982";
+				}
+			} else if (type === "Kecemasan") {
+				// Kecemasan
+				if (score >= 0 && score <= 7) {
+					return "#2FD2E5";
+				} else if (score >= 8 && score <= 9) {
+					return "#949ACB";
+				} else if (score >= 10 && score <= 14) {
+					return "#CF93C1";
+				} else if (score >= 15 && score <= 19) {
+					return "#F598AE";
+				} else {
+					return "#F58982";
+				}
+			} else {
+				// Stres
+				if (score >= 0 && score <= 14) {
+					return "#2FD2E5";
+				} else if (score >= 15 && score <= 18) {
+					return "#949ACB";
+				} else if (score >= 19 && score <= 25) {
+					return "#CF93C1";
+				} else if (score >= 26 && score <= 33) {
+					return "#F598AE";
+				} else {
+					return "#F58982";
+				}
 			}
 		},
 		toggleAccordion: function() {
@@ -523,6 +552,7 @@ export default {
 					]),
 					(this.series = [
 						{
+							name: "Grafik Hasil",
 							data: [
 								this.output.depression_score,
 								this.output.anxiety_score,
@@ -550,9 +580,9 @@ export default {
 							},
 						},
 						colors: [
-							this.getColor(this.output.depression_level),
-							this.getColor(this.output.anxiety_level),
-							this.getColor(this.output.stress_level),
+							this.getColor(this.output.depression_score, "Depresi"),
+							this.getColor(this.output.anxiety_score, "Kecemasan"),
+							this.getColor(this.output.stress_score, "Stres"),
 						],
 					})
 				),
