@@ -538,7 +538,7 @@ export default {
 			//Tiap API yang pake middleware auth harus nyertain token di header
 			const config = {
 				headers: {
-					Authorization: "Bearer " + localStorage.getItem("token"),
+					Authorization: localStorage.getItem("token"),
 				},
 			};
 

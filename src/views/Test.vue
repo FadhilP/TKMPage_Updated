@@ -297,7 +297,7 @@ export default {
 		await axios
 			.get(this.getQuestionsAPI, {
 				headers: {
-					Authorization: `Bearer ${localStorage.getItem("token")}`,
+					Authorization: `${localStorage.getItem("token")}`,
 				},
 			})
 			.then(
@@ -380,7 +380,7 @@ export default {
 			//Tiap API yang pake middleware auth harus nyertain token di header
 			const config = {
 				headers: {
-					Authorization: "Bearer " + localStorage.getItem("token"),
+					Authorization: localStorage.getItem("token"),
 				},
 			};
 
