@@ -448,6 +448,7 @@ export default {
 
     /* eslint-disable no-console */
     async OnGoogleAuthSuccess(idToken) {
+      console.log(this.clientId)
       this.isLoading = true;
 
       const params = {
