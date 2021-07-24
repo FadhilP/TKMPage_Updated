@@ -46,7 +46,6 @@
                   <button
                     v-google-signin-button="clientId"
                     class="py-3 w-full font-semibold text-white"
-                    :class="loadingClasses"
                   >
                     <span v-if="!showLogin">Register dengan Google</span
                     ><span v-else>Login dengan Google</span>
