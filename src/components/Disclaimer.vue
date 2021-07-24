@@ -75,6 +75,9 @@
                     placeholder="Masukkan Nama"
                     value=""
                   />
+                  <p class="text-left text-sm text-red-500 mt-2">
+                    {{ this.nameError }}
+                  </p>
                 </div>
                 <div>
                   <input
@@ -389,6 +392,7 @@ export default {
       showPassword: false,
       emailError: "",
       passwordError: "",
+      nameError: "",
     };
   },
   async mounted() {
@@ -484,8 +488,16 @@ export default {
         "Login gagal 😞, silahkan coba lagi atau refresh browser anda";
     },
 
-    async submitRegister() {
+    handleSubmit() {
       this.isLoading = true;
+      this.emailError = "";
+      this.passwordError = "";
+      this.nameError = "";
+    },
+
+    async submitRegister() {
+      this.handleSubmit();
+
       await axios
         .post(this.registerAPI, {
           name: this.name,
@@ -524,8 +536,13 @@ export default {
 
     authFailed(error) {
       this.isLoading = false;
-      const errorMessage = error.response.data.message;
-      if (errorMessage.includes("Email")) this.emailError = errorMessage;
+      const errorMessage = error.response.data.message[0].message
+        ? error.response.data.message[0].message
+        : error.response.data.message;
+      if (errorMessage.toLowerCase().includes("email"))
+        this.emailError = errorMessage;
+      else if (errorMessage.toLowerCase().includes("nama"))
+        this.nameError = errorMessage;
       else this.passwordError = errorMessage;
     },
 
