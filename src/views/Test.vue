@@ -280,8 +280,8 @@ export default {
 			errors: "",
 			dataSoal: [],
 			checkTokenAPI: process.env.VUE_APP_CHECK_TOKEN_API,
-			submitAnswerAPI: process.env.VUE_APP_SUBMIT_ANSWER_API,
-			getQuestionsAPI: process.env.VUE_APP_GET_QUESTIONS_API,
+			submitAnswerAPI: `${process.env.VUE_APP_API_URL}/personality-answer/store`,
+			getQuestionsAPI: `${process.env.VUE_APP_API_URL}/personality-question/all`,
 		};
 	},
 	components: {

@@ -186,7 +186,7 @@ export default {
 		return {
 			username: "",
 			checkTokenAPI: process.env.VUE_APP_CHECK_TOKEN_API,
-			registrationAPI: process.env.VUE_APP_REGISTRATION_API,
+			registrationAPI: `${process.env.VUE_APP_API_URL}/user-company-detail/store`,
 			jabatan: [
 				"Staff / Junior level",
 				"Supervisor / Senior level",
@@ -218,7 +218,6 @@ export default {
 	async created() {},
 	async mounted() {
 		window.location.href = "#";
-		this.submit();
 		this.username = localStorage.getItem("username");
 		this.person.name = this.username;
 		this.user_id = localStorage.getItem("identifier");

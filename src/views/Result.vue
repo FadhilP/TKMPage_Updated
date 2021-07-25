@@ -430,7 +430,7 @@ export default {
 			user_id: "",
 			isValid: false,
 			checkTokenAPI: process.env.VUE_APP_CHECK_TOKEN_API,
-			getResultAPI: process.env.VUE_APP_GET_RESULT_API,
+			getResultAPI: `${process.env.VUE_APP_API_URL}/personality-result/detail`,
 			background: {
 				ungu,
 				orange,
