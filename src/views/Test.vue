@@ -166,7 +166,7 @@
                 "
               >
                 <thead class="responsive-table">
-                  <tr class="responsive-table border-b">
+                  <tr class="responsive-table border-b border-black">
                     <th class="text-left px-5">Pernyataan</th>
                     <th class="px-5 py-3">0</th>
                     <th class="px-5 py-3">1</th>
