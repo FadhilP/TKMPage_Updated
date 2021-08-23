@@ -1,5 +1,5 @@
 <template>
-<tr class="sm:border-b border-black p-4 responsive-table">
+<tr class="sm:border-b p-4 responsive-table" style="border-color:#AFAFAF;">
     <ValidationProvider :name="name" rules="required" v-slot="{ errors }">
     <td class="responsive-table mt-4 px-2 sm:px-5 py-2 sm:py-3" :class="{ 'rounded-lg bg-orange-100 sm:bg-white border-2 border-orange-300 sm:border-0' : errors != '' }">
         <input type="hidden" :name="name" :value="picked">
@@ -19,7 +19,7 @@
     </ValidationProvider>
     <td class="responsive-table px-1 sm:px-5 py-1 sm:py-3 mt-2 border sm:border-0 rounded select-none" :class="{ 'bg-gray-200 border-gray-400 border-4 sm:bg-white' : picked == '0' }">
     <label class="inline-flex w-full items-center cursor-pointer">
-        <input type="radio" class="form-radio hidden sm:block border-black" v-model="picked" :name="name" value="0">
+        <input type="radio" class="form-radio hidden sm:block" style="border-color:#AFAFAF;" v-model="picked" :name="name" value="0">
         <div class="flex flex-row ml-2 my-1 sm:hidden">
             <div class="my-auto w-4 h-4 align-center inline-block bg-gray-500 text-center text-white text-xs rounded">0</div>
             <p class="mx-2 text-gray-800 text-sm" :class="{ 'font-semibold' : picked == '0' }">Tidak terjadi pada saya sama sekali</p>
@@ -28,7 +28,7 @@
     </td>
     <td class="responsive-table px-1 sm:px-5 py-1 sm:py-3 mt-2 border sm:border-0 rounded select-none" :class="{ 'bg-gray-200 border-gray-400 border-4 sm:bg-white' : picked == '1' }">
     <label class="inline-flex w-full items-center cursor-pointer">
-        <input type="radio" class="form-radio hidden sm:block border-black" v-model="picked" :name="name" value="1">
+        <input type="radio" class="form-radio hidden sm:block" style="border-color:#AFAFAF;" v-model="picked" :name="name" value="1">
         <div class="flex flex-row ml-2 my-1 sm:hidden">
             <div class="my-auto w-4 h-4 align-center inline-block bg-gray-500 text-center text-white text-xs rounded">1</div>
             <p class="mx-2 text-gray-800 text-sm" :class="{ 'font-semibold' : picked == '1' }">Jarang terjadi pada saya</p>
@@ -37,7 +37,7 @@
     </td>
     <td class="responsive-table px-1 sm:px-5 py-1 sm:py-3 mt-2 border sm:border-0 rounded select-none" :class="{ 'bg-gray-200 border-gray-400 sm:bg-white' : picked == '2' }">
     <label class="inline-flex w-full items-center cursor-pointer">
-        <input type="radio" class="form-radio hidden sm:block border-black" v-model="picked" :name="name" value="2">
+        <input type="radio" class="form-radio hidden sm:block" style="border-color:#AFAFAF;" v-model="picked" :name="name" value="2">
         <div class="flex flex-row ml-2 my-1 sm:hidden">
             <div class="my-auto w-4 h-4 align-center inline-block bg-gray-500 text-center text-white text-xs rounded">2</div>
             <p class="mx-2 text-gray-800 text-sm" :class="{ 'font-semibold' : picked == '2' }">Kadang terjadi pada saya</p>
@@ -46,7 +46,7 @@
     </td>
     <td class="responsive-table px-1 sm:px-5 py-1 sm:py-3 mt-2 border sm:border-0 rounded select-none" :class="{ 'bg-gray-200 border-gray-400 border-4 sm:bg-white' : picked == '3' }">
     <label class="inline-flex w-full items-center cursor-pointer">
-        <input type="radio" class="form-radio hidden sm:block border-black" v-model="picked" :name="name" value="3">
+        <input type="radio" class="form-radio hidden sm:block" style="border-color:#AFAFAF;" v-model="picked" :name="name" value="3">
         <div class="flex flex-row ml-2 my-1 sm:hidden">
             <div class="my-auto w-4 h-4 align-center inline-block bg-gray-500 text-center text-white text-xs rounded">3</div>
             <p class="mx-2 text-gray-800 text-sm" :class="{ 'font-semibold' : picked == '3' }">Sering terjadi pada saya</p>
