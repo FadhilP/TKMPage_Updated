@@ -234,14 +234,15 @@ export default {
 	methods: {
 		/* eslint-disable no-console */
 		submit: function() {
-
+			this.errors = {	
+				name: "",
+				jabatan: "",
+				unitKerja: ""
+			}
 			if (!this.person.jabatan) this.errors['jabatan'] = "Harap memasukkan jabatan"
 			if (!this.person.unitKerja) this.errors['unitKerja'] = "Harap memasukkan unit kerja"
 			if (!this.person.name) this.errors['name'] = "Harap memasukkan nama"
-
-			console.log(this.errors)
-
-			if (Object.keys(this.errors).length) return
+			
 			
 			// Jabatan Handler
 			let jabatanValue = null;
