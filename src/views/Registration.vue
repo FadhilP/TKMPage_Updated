@@ -28,6 +28,7 @@
 							placeholder="Walter Joseph Kovacs"
 							value=""
 						/>
+						<p class="text-red-500 font-semibold text-sm" v-if="errors.name">{{errors.name}}</p>
 					</div>
 					<!-- <div class="block mt-4">
 						<p class="text-gray-600 font-semibold text-sm">
@@ -100,6 +101,7 @@
 								>{{ data }}</option
 							>
 						</select>
+						<p class="text-red-500 font-semibold text-sm" v-if="errors.jabatan">{{errors.jabatan}}</p>
 					</div>
 
 					<div v-if="person.jabatan === 'Lainnya'" class="block mt-4">
@@ -132,6 +134,7 @@
 								>{{ data }}</option
 							>
 						</select>
+						<p class="text-red-500 font-semibold text-sm" v-if="errors.unitKerja">{{errors.unitKerja}}</p>
 					</div>
 
 					<div v-if="person.unitKerja === 'Lainnya'" class="block mt-4">
@@ -212,6 +215,11 @@ export default {
 				unitKerjaLainnya: null,
 			},
 			key: "",
+			errors: {
+				name: "",
+				jabatan: "",
+				unitKerja: ""
+			}
 		};
 	},
 	/* eslint-disable no-console */
@@ -226,6 +234,15 @@ export default {
 	methods: {
 		/* eslint-disable no-console */
 		submit: function() {
+
+			if (!this.person.jabatan) this.errors['jabatan'] = "Harap memasukkan jabatan"
+			if (!this.person.unitKerja) this.errors['unitKerja'] = "Harap memasukkan unit kerja"
+			if (!this.person.name) this.errors['name'] = "Harap memasukkan nama"
+
+			console.log(this.errors)
+
+			if (Object.keys(this.errors).length) return
+			
 			// Jabatan Handler
 			let jabatanValue = null;
 			if (this.person.jabatan === "Lainnya") {
