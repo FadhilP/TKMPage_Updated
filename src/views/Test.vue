@@ -166,7 +166,7 @@
                 "
               >
                 <thead class="responsive-table">
-                  <tr class="responsive-table border-b border-black">
+                  <tr class="responsive-table border-b border-black" style="border-color:#AFAFAF;">
                     <th class="text-left px-5">Pernyataan</th>
                     <th class="px-5 py-3">0</th>
                     <th class="px-5 py-3">1</th>
@@ -201,7 +201,7 @@
               </div>
               <table class="table-auto my-8 mx-auto text-lg text-gray-800">
                 <thead>
-                  <tr class="responsive-table border-b">
+                  <tr class="responsive-table border-b" style="border-color:#AFAFAF;">
                     <th class="text-left px-5">Pernyataan</th>
                     <th class="px-5 py-3">0</th>
                     <th class="px-5 py-3">1</th>
@@ -236,7 +236,7 @@
               </div>
               <table class="table-auto my-8 mx-auto text-lg text-gray-800">
                 <thead>
-                  <tr class="responsive-table border-b">
+                  <tr class="responsive-table border-b" style="border-color:#AFAFAF;">
                     <th class="text-left px-5">Pernyataan</th>
                     <th class="px-5 py-3">0</th>
                     <th class="px-5 py-3">1</th>
