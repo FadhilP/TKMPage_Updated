@@ -150,6 +150,18 @@
 					</div>
 					<!-- JABATAN INPUT END -->
 
+					<div class="block mt-4">
+						<p class="text-gray-600 font-semibold text-sm">
+							Masukkan Nomor WhatsApp Anda
+						</p>
+						<input
+							v-model.lazy="person.whatsAppNo"
+							class="form-input mt-2 block w-full text-sm focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
+							placeholder="Nomor WhatsApp"
+							value=""
+						/>
+					</div>
+
 					<div class="block mt-8">
 						<v-button
 							type="submit"
@@ -213,6 +225,7 @@ export default {
 				unitKerja: "",
 				jabatanLainnya: null,
 				unitKerjaLainnya: null,
+				whatsAppNo: ""
 			},
 			key: "",
 			errors: {
@@ -263,6 +276,7 @@ export default {
 						companyCode: this.kodePerusahaan,
 						division: unitKerjaValue,
 						position: jabatanValue,
+						whatsAppNo: this.person.whatsAppNo
 					},
 					{
 						headers: {
