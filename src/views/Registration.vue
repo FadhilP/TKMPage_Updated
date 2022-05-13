@@ -152,14 +152,16 @@
 
 					<div class="block mt-4">
 						<p class="text-gray-600 font-semibold text-sm">
-							Masukkan Nomor WhatsApp Anda
+							Nomor WhatsApp
 						</p>
 						<input
 							v-model.lazy="person.whatsAppNo"
 							class="form-input mt-2 block w-full text-sm focus:bg-gray-200 text-gray-800 placeholder-gray-500 focus:shadow-none focus:border-transparent focus:outline-none"
 							placeholder="Nomor WhatsApp"
 							value=""
+							type="number"
 						/>
+						<p class="text-red-500 font-semibold text-sm" v-if="errors.whatsAppNo">{{errors.whatsAppNo}}</p>
 					</div>
 
 					<div class="block mt-8">
@@ -231,7 +233,8 @@ export default {
 			errors: {
 				name: "",
 				jabatan: "",
-				unitKerja: ""
+				unitKerja: "",
+				whatsAppNo: "",
 			}
 		};
 	},
@@ -250,11 +253,13 @@ export default {
 			this.errors = {	
 				name: "",
 				jabatan: "",
-				unitKerja: ""
+				unitKerja: "",
+				whatsAppNo: ""
 			}
 			if (!this.person.jabatan) this.errors['jabatan'] = "Harap memasukkan jabatan"
 			if (!this.person.unitKerja) this.errors['unitKerja'] = "Harap memasukkan unit kerja"
 			if (!this.person.name) this.errors['name'] = "Harap memasukkan nama"
+			if (!this.person.whatsAppNo) this.errors['whatsAppNo'] = "Harap memasukkan nomor whatsapp"
 			
 			
 			// Jabatan Handler
